@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Naego Works 내고웍스</title>
+<meta name="description" content="Naego Works(내고웍스)는 대한민국 경산의 모바일 게임 개발사입니다. Naego Works is an independent mobile game studio in Gyeongsan, South Korea.">
+<link rel="icon" href="maze-keep.png">
+<style>
+  :root {
+    --color-surface: #fbf4e6;
+    --color-card: #fffdf8;
+    --color-text: #2b2420;
+    --color-muted: #6b5d52;
+    --color-accent: #c4622d;
+    --color-line: #eadcc5;
+    --space: clamp(1rem, 0.8rem + 1vw, 1.5rem);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-surface: #1d1916;
+      --color-card: #272220;
+      --color-text: #f3ebe0;
+      --color-muted: #b8a999;
+      --color-accent: #f2a35a;
+      --color-line: #3a332e;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--color-surface);
+    color: var(--color-text);
+    word-break: keep-all;
+    font: 16px/1.7 -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+  }
+  main { max-width: 760px; margin: 0 auto; padding: calc(var(--space) * 2.5) 16px calc(var(--space) * 2); }
+  .brand { font-size: clamp(2.4rem, 1.6rem + 4vw, 3.6rem); font-weight: 800; letter-spacing: -0.02em; line-height: 1.05; margin: 0; }
+  .brand span { color: var(--color-accent); }
+  .tagline { font-size: 1.15rem; color: var(--color-muted); margin: 12px 0 0; }
+  .tagline + .tagline { margin-top: 2px; font-size: 1rem; }
+  section { margin-top: calc(var(--space) * 2.5); }
+  h2 { font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-muted); margin: 0 0 12px; }
+  .app {
+    display: grid; grid-template-columns: 96px 1fr; gap: 18px; align-items: start;
+    background: var(--color-card); border: 1px solid var(--color-line); border-radius: 22px;
+    padding: 18px; box-shadow: 0 12px 30px rgba(43, 36, 32, 0.08);
+  }
+  .app img { width: 96px; height: 96px; border-radius: 22px; }
+  .app h3 { margin: 0; font-size: 1.35rem; }
+  .app p { margin: 4px 0 10px; color: var(--color-muted); }
+  .links { display: flex; flex-wrap: wrap; gap: 8px; }
+  .links a {
+    display: inline-block; padding: 7px 14px; border-radius: 999px; font-weight: 600; font-size: 0.92rem;
+    text-decoration: none; color: var(--color-text); border: 1px solid var(--color-line);
+  }
+  .links a.primary { background: var(--color-accent); border-color: var(--color-accent); color: #fff; }
+  .links a:hover, .links a:focus-visible { border-color: var(--color-accent); outline: none; }
+  .banner { display: block; width: 100%; height: auto; aspect-ratio: 1200 / 514; border-radius: 18px; margin-top: 14px; }
+  dl { display: grid; grid-template-columns: max-content 1fr; gap: 8px 22px; margin: 0; }
+  dt { color: var(--color-muted); }
+  dd { margin: 0; }
+  a { color: var(--color-accent); }
+  footer { margin-top: calc(var(--space) * 3); padding-top: var(--space); border-top: 1px solid var(--color-line); color: var(--color-muted); font-size: 0.85rem; }
+  @media (max-width: 480px) {
+    .app { grid-template-columns: 72px 1fr; gap: 14px; }
+    .app img { width: 72px; height: 72px; border-radius: 17px; }
+    dl { grid-template-columns: 1fr; gap: 0; }
+    dd { margin-bottom: 10px; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1 class="brand">Naego <span>Works</span></h1>
+    <p class="tagline">작고 단단한 모바일 게임을 만드는 1인 게임 스튜디오, 내고웍스입니다.</p>
+    <p class="tagline">An independent mobile game studio from Gyeongsan, South Korea.</p>
+  </header>
+
+  <section aria-labelledby="games">
+    <h2 id="games">Games</h2>
+    <article class="app">
+      <img src="maze-keep.png" alt="미로성 앱 아이콘" width="96" height="96">
+      <div>
+        <h3>미로성 · Maze Keep</h3>
+        <p>블록으로 길을 막고 타워로 성을 지키는 퍼즐 디펜스 게임.<br>A puzzle tower-defense game: shape the maze with blocks, guard the keep with towers.</p>
+        <div class="links">
+          <a class="primary" href="https://apps.apple.com/kr/app/id6818739374">App Store</a>
+          <a href="https://donghyeun02.github.io/maze-keep/">개인정보 처리방침 · Privacy</a>
+        </div>
+      </div>
+    </article>
+    <img class="banner" src="maze-keep-banner.jpg" alt="미로성 게임 화면" width="1200" height="514" loading="lazy">
+  </section>
+
+  <section aria-labelledby="company">
+    <h2 id="company">Company</h2>
+    <dl>
+      <dt>상호 · Name</dt><dd>내고웍스 (Naego Works)</dd>
+      <dt>대표 · Founder</dt><dd>신동현 (Donghyeon Shin)</dd>
+      <dt>D-U-N-S</dt><dd>697009634</dd>
+      <dt>주소 · Address</dt><dd>경상북도 경산시 청운1로 2, 205호 (대동)<br>Unit 205, 2 Cheongun 1-ro, Gyeongsan-si, Gyeongsangbuk-do, Republic of Korea</dd>
+      <dt>문의 · Contact</dt><dd><a href="mailto:donghyeun02@gmail.com">donghyeun02@gmail.com</a></dd>
+    </dl>
+  </section>
+
+  <footer>© 2026 Naego Works. All rights reserved.</footer>
+</main>
+</body>
+</html>
