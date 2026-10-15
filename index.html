@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Naego Works 내고웍스</title>
-<meta name="description" content="Naego Works(내고웍스)는 대한민국 경산의 1인 모바일 게임 스튜디오입니다. 미로성, 젤리팡. Naego Works is an independent mobile game studio in Gyeongsan, South Korea.">
+<meta name="description" content="Naego Works(내고웍스)는 작고 단단한 모바일 게임을 만드는 1인 게임 스튜디오입니다. 미로성, 젤리팡. Naego Works is an independent mobile game studio in South Korea.">
 <meta property="og:title" content="Naego Works 내고웍스">
 <meta property="og:description" content="작고 단단한 모바일 게임을 만드는 1인 게임 스튜디오">
 <meta property="og:image" content="https://naegoworks.com/maze-keep-banner.jpg">
@@ -12,403 +12,288 @@
 <link rel="icon" type="image/png" sizes="32x32" href="brand/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="brand/favicon-16.png">
 <link rel="apple-touch-icon" href="brand/apple-touch-icon.png">
-<link rel="preconnect" href="https://cdn.jsdelivr.net">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <style>
   :root {
-    --surface: #f8f1e4;
-    --surface-2: #f1e6d2;
-    --card: #fffcf6;
-    --text: #241d18;
-    --muted: #6f6156;
-    --line: #e6d6bd;
-    --accent: #c4622d;
-    --accent-deep: #8f3f17;
-    --space: clamp(1rem, 0.8rem + 1vw, 1.5rem);
-    --radius: 26px;
+    --white: #ffffff;
+    --gray: #f5f5f7;
+    --text: #1d1d1f;
+    --muted: #6e6e73;
+    --line: #d2d2d7;
+    --blue: #0071e3;
+    --blue-hover: #0077ed;
+    --link: #0066cc;
     --ease: cubic-bezier(0.16, 1, 0.3, 1);
-    --shadow: 0 1px 0 rgba(255, 255, 255, 0.7) inset, 0 18px 40px -18px rgba(60, 35, 15, 0.35);
   }
   @media (prefers-color-scheme: dark) {
     :root {
-      --surface: #17130f;
-      --surface-2: #211b16;
-      --card: #241e19;
-      --text: #f4ece1;
-      --muted: #b6a796;
-      --line: #3a3029;
-      --accent: #f2a35a;
-      --accent-deep: #ffcf9a;
-      --shadow: 0 18px 40px -18px rgba(0, 0, 0, 0.7);
+      --white: #000000;
+      --gray: #161617;
+      --text: #f5f5f7;
+      --muted: #a1a1a6;
+      --line: #424245;
+      --link: #2997ff;
     }
   }
   * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
   body {
-    margin: 0;
-    background:
-      radial-gradient(1200px 600px at 85% -10%, color-mix(in oklab, var(--accent) 16%, transparent), transparent 70%),
-      var(--surface);
-    color: var(--text);
-    font: 16px/1.7 "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", sans-serif;
-    word-break: keep-all;
-    -webkit-font-smoothing: antialiased;
+    margin: 0; background: var(--white); color: var(--text);
+    font: 17px/1.47 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Apple SD Gothic Neo", "Pretendard Variable", Pretendard, sans-serif;
+    letter-spacing: -0.022em; word-break: keep-all; -webkit-font-smoothing: antialiased;
   }
-  main { max-width: 980px; margin: 0 auto; padding: 0 16px; }
-  a { color: var(--accent); }
+  a { color: var(--link); text-decoration: none; }
+  a:hover { text-decoration: underline; }
 
-  /* ---------- Top bar ---------- */
-  .top {
-    position: sticky; top: 0; z-index: 10;
-    backdrop-filter: saturate(1.4) blur(14px); -webkit-backdrop-filter: saturate(1.4) blur(14px);
-    background: color-mix(in oklab, var(--surface) 78%, transparent);
-    border-bottom: 1px solid color-mix(in oklab, var(--line) 70%, transparent);
+  /* ---------- Global nav ---------- */
+  .gnav {
+    position: sticky; top: 0; z-index: 10; height: 48px;
+    background: color-mix(in srgb, var(--white) 80%, transparent);
+    backdrop-filter: saturate(1.8) blur(20px); -webkit-backdrop-filter: saturate(1.8) blur(20px);
   }
-  .top nav { max-width: 980px; margin: 0 auto; padding: 12px 16px; display: flex; align-items: center; gap: 22px; }
-  .logo { display: flex; align-items: center; gap: 10px; font-weight: 900; letter-spacing: -0.03em; color: var(--text); text-decoration: none; font-size: 1.1rem; margin-right: auto; }
-  .logo img { width: 34px; height: 34px; display: block; }
-  .top nav a.link { color: var(--muted); text-decoration: none; font-weight: 600; font-size: 0.95rem; }
-  .top nav a.link:hover { color: var(--text); }
-  .top .btn { padding: 8px 16px; font-size: 0.9rem; }
+  .gnav nav { max-width: 1024px; height: 100%; margin: 0 auto; padding: 0 22px; display: flex; align-items: center; gap: 32px; }
+  .gnav .logo { display: flex; align-items: center; gap: 8px; margin-right: auto; color: var(--text); font-weight: 600; font-size: 15px; }
+  .gnav .logo:hover { text-decoration: none; }
+  .gnav .logo img { width: 28px; height: 28px; }
+  .gnav a.item { color: var(--text); opacity: 0.8; font-size: 13px; }
+  .gnav a.item:hover { opacity: 1; text-decoration: none; }
 
-  /* ---------- Hero ---------- */
-  .hero {
-    display: grid; grid-template-columns: 1.25fr 1fr; align-items: center; gap: calc(var(--space) * 2);
-    padding: calc(var(--space) * 4) 0 calc(var(--space) * 3);
+  /* ---------- Tiles ---------- */
+  .tile { text-align: center; padding: 56px 22px 0; overflow: hidden; }
+  .tile.gray { background: var(--gray); }
+  .tile h1, .tile h2 { margin: 0; font-weight: 700; letter-spacing: -0.015em; line-height: 1.07; }
+  .tile h1 { font-size: clamp(40px, 4vw + 24px, 80px); }
+  .tile h2 { font-size: clamp(36px, 3vw + 22px, 56px); }
+  .tile .sub { margin: 6px 0 0; font-size: clamp(19px, 1vw + 15px, 28px); line-height: 1.17; font-weight: 400; }
+  .tile .note { margin: 8px auto 0; max-width: 34em; color: var(--muted); font-size: 17px; }
+  .ctas { display: flex; justify-content: center; flex-wrap: wrap; gap: 14px; margin-top: 18px; }
+  .pill {
+    display: inline-block; min-width: 28px; padding: 11px 21px; border-radius: 980px;
+    font-size: 17px; line-height: 1.18; border: 1px solid var(--blue);
+    transition: background 0.2s, color 0.2s;
   }
-  .eyebrow {
-    display: inline-flex; align-items: center; gap: 8px; margin: 0 0 18px;
-    font-size: 0.8rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted);
-  }
-  .eyebrow::before { content: ""; width: 10px; height: 10px; border-radius: 3px; background: var(--accent); transform: rotate(45deg); }
-  .brand {
-    margin: 0; font-weight: 900; letter-spacing: -0.045em; line-height: 0.92;
-    font-size: clamp(3.4rem, 1.6rem + 8vw, 7.2rem);
-  }
-  .brand span { display: block; color: var(--accent); }
-  .lede { margin: 22px 0 0; max-width: 30em; font-size: clamp(1.05rem, 1rem + 0.4vw, 1.25rem); color: var(--muted); }
-  .lede strong { color: var(--text); font-weight: 700; }
-  .hero-cta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+  .pill:hover { text-decoration: none; }
+  .pill.fill { background: var(--blue); color: #fff; }
+  .pill.fill:hover { background: var(--blue-hover); }
+  .pill.line { color: var(--blue); }
+  .pill.line:hover { background: var(--blue); color: #fff; }
+  .pill:focus-visible { outline: 4px solid rgba(0, 125, 250, 0.6); outline-offset: 1px; }
+  .badge { display: inline-block; padding: 11px 21px; border-radius: 980px; font-size: 17px; line-height: 1.18; color: var(--muted); border: 1px solid var(--line); }
 
-  /* Two app icons stacked like toy blocks */
-  .stack { position: relative; aspect-ratio: 1; max-width: 340px; justify-self: center; width: 100%; }
-  .stack .tile {
-    position: absolute; width: 58%; aspect-ratio: 1; border-radius: 28%;
-    box-shadow: 0 30px 50px -20px rgba(60, 30, 10, 0.55);
-    transition: transform 0.6s var(--ease);
-  }
-  .stack .tile img { width: 100%; height: 100%; border-radius: inherit; display: block; }
-  .stack .a { left: 2%; top: 6%; transform: rotate(-9deg); }
-  .stack .b { right: 2%; bottom: 4%; transform: rotate(7deg); }
-  .stack:hover .a { transform: rotate(-13deg) translate(-6px, -8px); }
-  .stack:hover .b { transform: rotate(11deg) translate(6px, 8px); }
-  .stack .dot {
-    position: absolute; width: 16%; aspect-ratio: 1; border-radius: 22%;
-    background: var(--accent); right: 12%; top: 10%; transform: rotate(18deg); opacity: 0.9;
-  }
-  .stack .dot.two { width: 10%; background: #ff6fb5; left: 10%; bottom: 12%; right: auto; top: auto; transform: rotate(-20deg); }
+  /* Hero */
+  .hero { padding-top: 88px; padding-bottom: 72px; }
+  .hero .mark { width: 120px; height: 120px; display: block; margin: 0 auto 12px; }
+  .hero .icons { display: flex; justify-content: center; gap: 22px; margin-top: 48px; }
+  .hero .icons img { width: 112px; height: 112px; border-radius: 25px; box-shadow: 0 10px 30px -12px rgba(0, 0, 0, 0.35); transition: transform 0.5s var(--ease); }
+  .hero .icons a:hover img { transform: translateY(-6px) scale(1.04); }
 
-  /* ---------- Buttons ---------- */
-  .btn {
-    display: inline-flex; align-items: center; gap: 8px; padding: 11px 20px; border-radius: 999px;
-    font-weight: 700; font-size: 0.95rem; text-decoration: none; color: var(--text);
-    border: 1.5px solid var(--line); background: var(--card);
-    transition: transform 0.2s var(--ease), border-color 0.2s, background 0.2s;
+  /* Game scenes: text on one side, the playing scene on the other */
+  .scrolly { text-align: left; }
+  .split {
+    max-width: 980px; margin: 0 auto 28px; display: grid; grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    gap: 48px; align-items: center;
   }
-  .btn:hover { transform: translateY(-2px); border-color: var(--g, var(--accent)); }
-  .btn:active { transform: translateY(0); }
-  .btn:focus-visible { outline: 3px solid color-mix(in oklab, var(--g, var(--accent)) 45%, transparent); outline-offset: 2px; }
-  .btn.solid { background: var(--g, var(--accent)); border-color: var(--g, var(--accent)); color: #fff; box-shadow: 0 6px 0 var(--g-deep, var(--accent-deep)); }
-  .btn.solid:hover { transform: translateY(-2px); box-shadow: 0 8px 0 var(--g-deep, var(--accent-deep)); }
-  .btn.solid:active { transform: translateY(4px); box-shadow: 0 2px 0 var(--g-deep, var(--accent-deep)); }
-  .soon {
-    display: inline-flex; align-items: center; gap: 8px; padding: 11px 18px; border-radius: 999px;
-    font-weight: 700; font-size: 0.95rem; color: var(--g-deep); background: color-mix(in oklab, var(--g) 14%, var(--card));
+  .split.flip { grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); }
+  .split.flip .copy { order: 2; }
+  .split canvas { display: block; width: 100%; height: clamp(360px, 40vw, 520px); border-radius: 28px; background: var(--scene-bg); }
+  .split .caption { position: relative; height: 4.4em; margin-top: 28px; font-size: clamp(26px, 1.4vw + 16px, 36px); }
+  .split .caption p {
+    position: absolute; inset: 0; margin: 0; font-weight: 700; line-height: 1.12; letter-spacing: -0.02em;
+    opacity: 0; transform: translateY(12px); transition: opacity 0.5s var(--ease), transform 0.7s var(--ease);
   }
-  .soon::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--g); animation: pulse 1.6s ease-in-out infinite; }
-  @keyframes pulse { 50% { opacity: 0.3; transform: scale(0.7); } }
-
-  /* ---------- Trust strip ---------- */
-  .facts { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 20px; overflow: hidden; }
-  .facts div { background: var(--card); padding: 18px 20px; }
-  .facts b { display: block; font-size: clamp(1.3rem, 1rem + 1vw, 1.7rem); font-weight: 800; letter-spacing: -0.03em; }
-  .facts span { color: var(--muted); font-size: 0.88rem; }
-
-  /* ---------- Contact ---------- */
-  .contact { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
-  .ask {
-    display: flex; flex-direction: column; gap: 6px; padding: 22px; border-radius: 22px; text-decoration: none; color: var(--text);
-    background: var(--card); border: 1.5px solid var(--line); transition: transform 0.4s var(--ease), border-color 0.2s;
-  }
-  .ask:hover { transform: translateY(-3px); border-color: var(--accent); }
-  .ask:focus-visible { outline: 3px solid color-mix(in oklab, var(--accent) 45%, transparent); outline-offset: 2px; }
-  .ask .k { font-size: 0.78rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); }
-  .ask strong { font-size: 1.15rem; letter-spacing: -0.02em; }
-  .ask span { color: var(--muted); font-size: 0.92rem; }
-  .ask em { margin-top: auto; padding-top: 10px; font-style: normal; font-weight: 700; color: var(--accent); }
+  .split .caption p.on { opacity: 1; transform: none; }
+  .split .caption b { color: var(--g); font-weight: 700; }
+  .scrolly.maze { --g: #3f8f2c; }
+  .scrolly.jelly { --g: #e0418f; }
+  .scrolly.maze { --scene-bg: linear-gradient(180deg, #d9efbd, #9fd685); }
+  .scrolly .appcard { border-radius: 18px; }
+  .scrolly.jelly { --scene-bg: linear-gradient(180deg, #ffe0f0, #f7b3dc 65%, #e2b6f3); }
 
 
-  /* ---------- Scrollytelling ---------- */
-  .scrolly { position: relative; margin: calc(var(--space) * 0.5) 0; }
-  .scrolly .stage {
-    display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.3fr); align-items: center; gap: calc(var(--space) * 1.5);
-    padding: 8px 0;
+  /* Game card under each scene: store banner, icon, buttons */
+  .appcard {
+    max-width: 720px; margin: 64px auto 72px; text-align: left; overflow: hidden; position: relative;
+    background: var(--card-bg); border-radius: 0 0 18px 18px;
   }
-  .scrolly .copy { position: relative; min-height: 13em; }
-  .scrolly .kicker { font-size: 0.8rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--g); margin: 0 0 10px; }
-  .scrolly .line {
-    position: absolute; left: 0; right: 0; top: 2.2em; margin: 0;
-    font-size: clamp(1.7rem, 1.1rem + 2.4vw, 3rem); font-weight: 900; letter-spacing: -0.04em; line-height: 1.12;
-    opacity: 0; transform: translateY(24px); transition: opacity 0.5s var(--ease), transform 0.7s var(--ease);
+  .appcard > a { position: relative; display: block; }
+  .appcard .banner { display: block; width: 100%; height: auto; aspect-ratio: 1200 / 440; object-fit: cover; }
+  /* Banner fades into the card, so the art and the text read as one piece */
+  .appcard > a::after {
+    content: ""; position: absolute; inset: auto 0 0 0; height: 45%;
+    background: linear-gradient(to top, var(--card-bg), color-mix(in srgb, var(--card-bg) 0%, transparent));
   }
-  .scrolly .line.on { opacity: 1; transform: none; }
-  .scrolly .line em { font-style: normal; color: var(--g); }
-  .scrolly .line small { display: block; margin-top: 14px; font-size: 1rem; font-weight: 500; letter-spacing: 0; color: var(--muted); line-height: 1.6; }
-  .scrolly canvas {
-    width: 100%; height: min(70vh, 560px); display: block; border-radius: 32px;
-    background: var(--scene-bg); box-shadow: var(--shadow);
-  }
-  .scrolly.maze { --g: #4f9a3a; --scene-bg: linear-gradient(160deg, #cdeaa6, #8ccf74); }
-  .scrolly.jelly { --g: #ec4f9c; --scene-bg: linear-gradient(160deg, #ffd6ec, #f6a8d6 60%, #d8a6f0); }
-  @media (max-width: 760px) {
-    .scrolly .stage { grid-template-columns: 1fr; grid-template-rows: auto 1fr; align-items: start; gap: 12px; }
-    .scrolly .copy { min-height: 8.2em; }
-    .scrolly .line { font-size: 1.6rem; top: 1.8em; }
-    .scrolly .line small { font-size: 0.92rem; margin-top: 8px; }
-    .scrolly canvas { height: min(60vh, 520px); }
+  .appcard .row { display: grid; grid-template-columns: 84px 1fr auto; gap: 18px; align-items: center; padding: 0 22px 22px; position: relative; }
+  .appcard .icon { width: 84px; height: 84px; border-radius: 19px; margin-top: -34px; border: 4px solid var(--card-bg); box-shadow: 0 10px 24px -10px rgba(0, 0, 0, 0.4); background: var(--card-bg); }
+  .appcard h3 { margin: 8px 0 2px; font-size: 20px; font-weight: 700; }
+  .appcard .pill, .appcard .badge { font-size: 15px; padding: 9px 18px; }
+  .appcard p { margin: 0; color: var(--muted); font-size: 15px; }
+  .appcard .ctas { justify-content: flex-end; margin-top: 14px; }
+  .tile.gray { --card-bg: var(--white); }
+  .tile.scrolly:not(.gray) { --card-bg: var(--gray); }
+
+  /* Contact */
+  .contact { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 980px; margin: 40px auto 0; padding-bottom: 72px; text-align: left; }
+  .contact div { background: var(--white); border-radius: 18px; padding: 28px; }
+  .contact h3 { margin: 0 0 6px; font-size: 21px; font-weight: 600; }
+  .contact p { margin: 0 0 14px; color: var(--muted); font-size: 15px; }
+  .contact a { font-size: 17px; }
+  .contact a::after { content: " ›"; }
+
+  /* Footer (company details, Apple-style fine print) */
+  footer { background: var(--gray); color: var(--muted); font-size: 12px; line-height: 1.33; }
+  footer .wrap { max-width: 980px; margin: 0 auto; padding: 18px 22px 24px; }
+  footer .say { margin: 0 0 12px; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
+  footer dl { display: grid; grid-template-columns: max-content 1fr; gap: 6px 18px; margin: 0 0 12px; }
+  footer dt { color: var(--muted); }
+  footer dd { margin: 0; color: var(--text); }
+  footer .legal { padding-top: 12px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+  footer a { color: var(--text); }
+
+  @media (max-width: 734px) {
+    .gnav a.item { display: none; }
+    .tile { padding-top: 44px; }
+    .hero { padding-top: 64px; padding-bottom: 52px; }
+    .hero .icons img { width: 84px; height: 84px; border-radius: 19px; }
+    .split, .split.flip { grid-template-columns: 1fr; gap: 16px; }
+    .split.flip .copy { order: 0; }
+    .split .copy { text-align: center; }
+    .split .caption { height: 2.6em; margin-top: 14px; font-size: 22px; }
+    .split canvas { height: 380px; }
+    .contact { grid-template-columns: 1fr; gap: 12px; }
+    .appcard { margin-top: 40px; }
+    .appcard .row { grid-template-columns: 68px 1fr; gap: 12px; padding: 0 16px 18px; }
+    .appcard .icon { width: 68px; height: 68px; border-radius: 15px; margin-top: -26px; }
+    .appcard .ctas { grid-column: 1 / -1; justify-content: flex-start; margin-top: 4px; }
+    footer dl { grid-template-columns: 1fr; gap: 0; }
+    footer dd { margin-bottom: 8px; }
   }
   @media (prefers-reduced-motion: reduce) {
-    .scrolly .line { position: static; opacity: 1; transform: none; margin-bottom: 10px; }
-    .scrolly .line:not(:first-of-type) { display: none; }
-  }
-
-  /* ---------- Section headings ---------- */
-  .section-head { display: flex; align-items: baseline; gap: 14px; margin: calc(var(--space) * 2.5) 0 var(--space); }
-  .section-head h2 { margin: 0; font-size: clamp(1.6rem, 1.2rem + 1.6vw, 2.3rem); letter-spacing: -0.03em; font-weight: 800; }
-  .section-head .count { font-weight: 700; color: var(--muted); }
-  .section-head::after { content: ""; flex: 1; height: 1.5px; background: var(--line); transform: translateY(-6px); }
-
-  /* ---------- Game cards ---------- */
-  .games { display: grid; gap: calc(var(--space) * 1.6); }
-  .game {
-    --g: var(--accent); --g-deep: var(--accent-deep);
-    position: relative; background: var(--card); border: 1.5px solid var(--line); border-radius: var(--radius);
-    overflow: hidden; box-shadow: var(--shadow);
-    transition: transform 0.5s var(--ease), box-shadow 0.5s var(--ease);
-  }
-  .game:hover { transform: translateY(-4px); }
-  .game.maze { --g: #4f9a3a; --g-deep: #2f6a22; }
-  .game.jelly { --g: #ec4f9c; --g-deep: #a8226a; }
-  .game .art { position: relative; display: block; aspect-ratio: 1200 / 514; overflow: hidden; background: var(--surface-2); }
-  .game .art img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.9s var(--ease); }
-  .game:hover .art img { transform: scale(1.035); }
-  .game .art::after {
-    content: ""; position: absolute; inset: auto 0 0 0; height: 40%;
-    background: linear-gradient(to top, color-mix(in oklab, var(--card) 85%, transparent), transparent);
-  }
-  .game .body { display: grid; grid-template-columns: 112px 1fr; gap: 22px; padding: 0 28px 28px; position: relative; }
-  .game .icon {
-    width: 112px; height: 112px; border-radius: 26px; margin-top: -56px; position: relative; z-index: 1;
-    border: 4px solid var(--card); box-shadow: 0 14px 26px -10px rgba(0, 0, 0, 0.45); background: var(--card);
-  }
-  .game h3 { margin: 18px 0 2px; font-size: clamp(1.4rem, 1.2rem + 0.8vw, 1.8rem); letter-spacing: -0.03em; font-weight: 800; }
-  .game h3 small { font-size: 0.6em; font-weight: 700; color: var(--muted); letter-spacing: 0; margin-left: 6px; }
-  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 12px; padding: 0; list-style: none; }
-  .tags li {
-    font-size: 0.8rem; font-weight: 700; padding: 3px 10px; border-radius: 8px;
-    color: var(--g-deep); background: color-mix(in oklab, var(--g) 13%, var(--card));
-  }
-  .game p { margin: 0 0 6px; }
-  .game p.en { color: var(--muted); font-size: 0.93rem; }
-  .game .actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
-
-  /* ---------- Company ---------- */
-  .company {
-    display: grid; grid-template-columns: 1fr 1.4fr; gap: calc(var(--space) * 1.5);
-    background: var(--surface-2); border-radius: var(--radius); padding: calc(var(--space) * 1.6);
-  }
-  .company .say { margin: 0; font-size: clamp(1.25rem, 1rem + 1vw, 1.6rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.35; }
-  .company .say span { color: var(--accent); }
-  dl { display: grid; grid-template-columns: max-content 1fr; gap: 10px 22px; margin: 0; }
-  dt { color: var(--muted); font-size: 0.92rem; }
-  dd { margin: 0; font-weight: 500; }
-
-  footer {
-    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;
-    margin: calc(var(--space) * 3) 0 0; padding: var(--space) 0 calc(var(--space) * 2);
-    border-top: 1.5px solid var(--line); color: var(--muted); font-size: 0.85rem;
-  }
-  footer a { color: inherit; }
-
-  /* ---------- Motion ---------- */
-  .rise { animation: rise 0.9s var(--ease) both; }
-  .rise.d1 { animation-delay: 0.08s; } .rise.d2 { animation-delay: 0.16s; } .rise.d3 { animation-delay: 0.24s; }
-  @keyframes rise { from { opacity: 0; transform: translateY(18px); } }
-  @media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after { animation: none !important; transition: none !important; }
-  }
-
-  /* ---------- Small screens ---------- */
-  @media (max-width: 760px) {
-    .facts { grid-template-columns: repeat(2, 1fr); }
-    .contact { grid-template-columns: 1fr; }
-    .top nav a.link { display: none; }
-    .hero { grid-template-columns: 1fr; padding-top: calc(var(--space) * 2.5); }
-    .stack { max-width: 240px; order: -1; justify-self: start; }
-    .company { grid-template-columns: 1fr; }
-  }
-  @media (max-width: 480px) {
-    .game .body { grid-template-columns: 1fr; gap: 0; padding: 0 20px 22px; }
-    .game .icon { width: 88px; height: 88px; border-radius: 21px; margin-top: -44px; }
-    .game h3 { margin-top: 12px; }
-    dl { grid-template-columns: 1fr; gap: 0; }
-    dd { margin-bottom: 12px; }
+    *, *::before, *::after { transition: none !important; }
   }
 </style>
 </head>
 <body>
-<div class="top">
+<header class="gnav">
   <nav aria-label="주 메뉴">
-    <a class="logo" href="#"><img src="brand/naego-mark.png" alt="" width="34" height="34">Naego Works</a>
-    <a class="link" href="#games">Games</a>
-    <a class="link" href="#company">Company</a>
-    <a class="btn solid" href="#contact">문의하기</a>
+    <a class="logo" href="#"><img src="brand/naego-mark.png" alt="" width="28" height="28">Naego Works</a>
+    <a class="item" href="#maze-keep">미로성</a>
+    <a class="item" href="#jellypang">젤리팡</a>
+    <a class="item" href="#contact">문의</a>
   </nav>
-</div>
+</header>
+
 <main>
-  <header class="hero">
-    <div>
-      <p class="eyebrow rise">Independent game studio · KR</p>
-      <h1 class="brand rise d1">Naego<span>Works</span></h1>
-      <p class="lede rise d2"><strong>작고 단단한 모바일 게임</strong>을 만드는 1인 게임 스튜디오, 내고웍스입니다. 짧게 즐기고 오래 생각나는 퍼즐을 만듭니다.</p>
-      <div class="hero-cta rise d3">
-        <a class="btn solid" href="#games">게임 보기</a>
-        <a class="btn" href="#contact">비즈니스 문의</a>
+  <section class="tile hero">
+    <img class="mark" src="brand/naego-mark.png" alt="" width="120" height="120">
+    <h1>Naego Works</h1>
+    <p class="sub">작고 단단한 모바일 게임.</p>
+    <p class="note">내 고양이와 함께 일하는 1인 게임 스튜디오, 내고웍스입니다.</p>
+    <div class="ctas">
+      <a class="pill fill" href="#maze-keep">게임 보기</a>
+      <a class="pill line" href="#contact">문의하기</a>
+    </div>
+    <div class="icons">
+      <a href="#maze-keep"><img src="maze-keep.png" alt="미로성" width="112" height="112"></a>
+      <a href="#jellypang"><img src="jellypang.png" alt="젤리팡" width="112" height="112"></a>
+    </div>
+  </section>
+
+  <section class="tile gray scrolly maze" id="maze-keep" aria-labelledby="maze-title">
+    <div class="split" id="scene-maze">
+      <div class="copy">
+        <h2 id="maze-title">미로성</h2>
+        <p class="sub">블록으로 길을 막고, 타워로 성을 지키다.</p>
+        <div class="caption" aria-live="off">
+          <p data-at="0,0.4"><b>블록을 쌓아</b><br>길을 만들고</p>
+          <p data-at="0.4,0.62"><b>블록 위에</b><br>타워를 올리면</p>
+          <p data-at="0.62,1.01">몰려오는 몬스터,<br><b>성을 지켜요</b></p>
+        </div>
+      </div>
+      <canvas role="img" aria-label="블록이 떨어져 미로를 만들고, 타워가 세워지고, 몬스터가 성으로 가다 쓰러지는 애니메이션"></canvas>
+    </div>
+    <article class="appcard">
+      <a href="https://apps.apple.com/kr/app/id6818739374" tabindex="-1" aria-hidden="true"><img class="banner" src="maze-keep-banner.jpg" alt="" width="1200" height="514" loading="lazy"></a>
+      <div class="row">
+        <img class="icon" src="maze-keep.png" alt="미로성 앱 아이콘" width="112" height="112">
+        <div>
+          <h3>미로성 · Maze Keep</h3>
+          <p>퍼즐 디펜스 · iOS</p>
+        </div>
+        <div class="ctas">
+          <a class="pill fill" href="https://apps.apple.com/kr/app/id6818739374">App Store에서 보기</a>
+          <a class="pill line" href="https://donghyeun02.github.io/maze-keep/">개인정보 · 지원</a>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <section class="tile scrolly jelly" id="jellypang" aria-labelledby="jelly-title">
+    <div class="split flip" id="scene-jelly">
+      <div class="copy">
+        <h2 id="jelly-title">젤리팡</h2>
+        <p class="sub">같은 젤리를 꺾인 선으로 이어, 팡.</p>
+        <div class="caption" aria-live="off">
+          <p data-at="0,0.32"><b>말랑한 젤리</b>가<br>판 위로 쏟아지면</p>
+          <p data-at="0.32,0.8">같은 젤리를<br><b>꺾인 선으로</b> 이어요</p>
+          <p data-at="0.8,1.01">그리고,<br><b>팡!</b></p>
+        </div>
+      </div>
+      <canvas role="img" aria-label="젤리가 판에 떨어지고, 같은 젤리 두 개가 꺾인 선으로 이어지며 터지는 애니메이션"></canvas>
+    </div>
+    <article class="appcard">
+      <a href="jellypang/" tabindex="-1" aria-hidden="true"><img class="banner" src="jellypang-banner.jpg" alt="" width="1200" height="514" loading="lazy"></a>
+      <div class="row">
+        <img class="icon" src="jellypang.png" alt="젤리팡 앱 아이콘" width="112" height="112">
+        <div>
+          <h3>젤리팡 · JellyPang</h3>
+          <p>사천성 퍼즐 · iOS</p>
+        </div>
+        <div class="ctas">
+          <span class="badge">출시 예정</span>
+          <a class="pill line" href="jellypang/">개인정보 · 지원</a>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <section class="tile gray" id="contact" aria-labelledby="contact-title">
+    <h2 id="contact-title">문의</h2>
+    <p class="sub">무엇이든 편하게 메일 주세요.</p>
+    <div class="contact">
+      <div>
+        <h3>제휴 · 퍼블리싱</h3>
+        <p>플랫폼 입점, 퍼블리싱, 협업 제안</p>
+        <a href="mailto:contact@naegoworks.com?subject=%5B%EC%A0%9C%ED%9C%B4%C2%B7%ED%8D%BC%EB%B8%94%EB%A6%AC%EC%8B%B1%5D%20">메일 보내기</a>
+      </div>
+      <div>
+        <h3>게임 문의 · 버그 제보</h3>
+        <p>기기 모델, OS 버전, 게임과 스테이지를 적어 주세요.</p>
+        <a href="mailto:contact@naegoworks.com?subject=%5B%EA%B3%A0%EA%B0%9D%EC%A7%80%EC%9B%90%5D%20">메일 보내기</a>
+      </div>
+      <div>
+        <h3>기타</h3>
+        <p>언론, 채용, 그 밖의 문의</p>
+        <a href="mailto:contact@naegoworks.com?subject=%5B%EA%B8%B0%ED%83%80%20%EB%AC%B8%EC%9D%98%5D%20">contact@naegoworks.com</a>
       </div>
     </div>
-    <div class="stack rise d2" aria-hidden="true">
-      <span class="dot"></span>
-      <span class="tile a"><img src="maze-keep.png" alt="" width="256" height="256"></span>
-      <span class="tile b"><img src="jellypang.png" alt="" width="256" height="256"></span>
-      <span class="dot two"></span>
-    </div>
-  </header>
-
-  <section class="facts rise d3" aria-label="스튜디오 한눈에 보기">
-    <div><b>1</b><span>App Store 출시작</span></div>
-    <div><b>1</b><span>출시 예정작</span></div>
-    <div><b>0</b><span>수집하는 개인정보</span></div>
-    <div><b>D-U-N-S</b><span>등록 사업자 697009634</span></div>
   </section>
-
-  <section aria-labelledby="games">
-    <div class="section-head"><h2 id="games">Games</h2><span class="count">02</span></div>
-    <div class="games">
-      <section class="scrolly maze" id="scene-maze" aria-label="미로성 플레이 장면">
-        <div class="stage">
-          <div class="copy">
-            <p class="kicker">Maze Keep · 미로성</p>
-            <p class="line" data-at="0,0.4"><em>블록을 쌓아</em><br>길을 만들고<small>떨어지는 블록으로 몬스터가 지나갈 미로를 직접 설계해요.</small></p>
-            <p class="line" data-at="0.4,0.62"><em>타워를 올리면</em><small>쌓은 블록 위에 화살·대포 타워를 세워요.</small></p>
-            <p class="line" data-at="0.62,1.01">몰려오는 몬스터,<br><em>성을 지켜요</em><small>길을 길게 만들수록 타워가 더 많이 때려요.</small></p>
-          </div>
-          <canvas role="img" aria-label="블록이 떨어져 미로를 만들고, 타워가 세워지고, 몬스터가 성으로 가다 쓰러지는 애니메이션"></canvas>
-        </div>
-      </section>
-      <article class="game maze">
-        <a class="art" href="https://apps.apple.com/kr/app/id6818739374" tabindex="-1" aria-hidden="true">
-          <img src="maze-keep-banner.jpg" alt="" width="1200" height="514" loading="lazy">
-        </a>
-        <div class="body">
-          <img class="icon" src="maze-keep.png" alt="미로성 앱 아이콘" width="112" height="112">
-          <div>
-            <h3>미로성 <small>Maze Keep</small></h3>
-            <ul class="tags"><li>퍼즐 디펜스</li><li>iOS</li><li>출시</li></ul>
-            <p>블록으로 길을 막고 타워로 성을 지키는 퍼즐 디펜스 게임.</p>
-            <p class="en" lang="en">A puzzle tower-defense game: shape the maze with blocks, guard the keep with towers.</p>
-            <div class="actions">
-              <a class="btn solid" href="https://apps.apple.com/kr/app/id6818739374">App Store에서 받기</a>
-              <a class="btn" href="https://donghyeun02.github.io/maze-keep/">개인정보 처리방침 · 지원</a>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <section class="scrolly jelly" id="scene-jelly" aria-label="젤리팡 플레이 장면">
-        <div class="stage">
-          <div class="copy">
-            <p class="kicker">JellyPang · 젤리팡</p>
-            <p class="line" data-at="0,0.32"><em>말랑한 젤리</em>가<br>판 위로 쏟아지면<small>하트, 별, 물방울… 12가지 젤리가 판을 채워요.</small></p>
-            <p class="line" data-at="0.32,0.8">같은 젤리를<br><em>꺾인 선으로</em> 이어요<small>두 번까지 꺾을 수 있고, 판 바깥으로 돌아가도 돼요.</small></p>
-            <p class="line" data-at="0.8,1.01">그리고,<br><em>팡!</em><small>곧 App Store에서 만나요.</small></p>
-          </div>
-          <canvas role="img" aria-label="젤리가 판에 떨어지고, 같은 젤리 두 개가 꺾인 선으로 이어지며 터지는 애니메이션"></canvas>
-        </div>
-      </section>
-      <article class="game jelly">
-        <a class="art" href="jellypang/" tabindex="-1" aria-hidden="true">
-          <img src="jellypang-banner.jpg" alt="" width="1200" height="514" loading="lazy">
-        </a>
-        <div class="body">
-          <img class="icon" src="jellypang.png" alt="젤리팡 앱 아이콘" width="112" height="112">
-          <div>
-            <h3>젤리팡 <small>JellyPang</small></h3>
-            <ul class="tags"><li>사천성 퍼즐</li><li>iOS</li></ul>
-            <p>같은 젤리를 꺾인 선으로 이어 팡! 터뜨리는 사천성 퍼즐 게임.</p>
-            <p class="en" lang="en">A Sichuan-style link puzzle: connect matching jellies with a bent line and pop them.</p>
-            <div class="actions">
-              <span class="soon">출시 예정 · Coming soon</span>
-              <a class="btn" href="jellypang/">개인정보 처리방침 · 지원</a>
-            </div>
-          </div>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <section aria-labelledby="contact">
-    <div class="section-head"><h2 id="contact">Contact</h2></div>
-    <div class="contact">
-      <a class="ask" href="mailto:contact@naegoworks.com?subject=%5B%EC%A0%9C%ED%9C%B4%C2%B7%ED%8D%BC%EB%B8%94%EB%A6%AC%EC%8B%B1%5D%20">
-        <span class="k">Business</span>
-        <strong>제휴 · 퍼블리싱</strong>
-        <span>플랫폼 입점, 퍼블리싱, 협업 제안을 기다립니다.</span>
-        <em>메일 쓰기 →</em>
-      </a>
-      <a class="ask" href="mailto:contact@naegoworks.com?subject=%5B%EA%B3%A0%EA%B0%9D%EC%A7%80%EC%9B%90%5D%20">
-        <span class="k">Support</span>
-        <strong>게임 문의 · 버그 제보</strong>
-        <span>기기 모델, OS 버전, 게임과 스테이지를 적어 주세요.</span>
-        <em>메일 쓰기 →</em>
-      </a>
-      <a class="ask" href="mailto:contact@naegoworks.com?subject=%5B%EA%B8%B0%ED%83%80%20%EB%AC%B8%EC%9D%98%5D%20">
-        <span class="k">Other</span>
-        <strong>기타 문의</strong>
-        <span>언론, 채용, 그 밖의 무엇이든 편하게 보내 주세요.</span>
-        <em>contact@naegoworks.com</em>
-      </a>
-    </div>
-  </section>
-
-  <section aria-labelledby="company">
-    <div class="section-head"><h2 id="company">Company</h2></div>
-    <div class="company">
-      <p class="say">한 사람이 끝까지 <span>직접</span> 만들고, 직접 답합니다.</p>
-      <dl>
-        <dt>상호 · Name</dt><dd>내고웍스 (Naego Works)</dd>
-        <dt>대표 · Founder</dt><dd>신동현 (Donghyeon Shin)</dd>
-        <dt>D-U-N-S</dt><dd>697009634</dd>
-        <dt>주소 · Address</dt><dd>경상북도 경산시 청운1로 2<br><span lang="en">2 Cheongun 1-ro, Gyeongsan-si, Gyeongsangbuk-do, Republic of Korea</span></dd>
-        <dt>문의 · Contact</dt><dd><a href="mailto:contact@naegoworks.com">contact@naegoworks.com</a></dd>
-      </dl>
-    </div>
-  </section>
-
-  <footer>
-    <span>© 2026 Naego Works. All rights reserved.</span>
-    <a href="mailto:contact@naegoworks.com">contact@naegoworks.com</a>
-  </footer>
 </main>
+
+<footer>
+  <div class="wrap">
+    <p class="say">미로성은 App Store에서 받을 수 있습니다. 젤리팡은 출시 준비 중입니다. 두 게임 모두 개인정보를 수집하지 않습니다.</p>
+    <dl>
+      <dt>상호 · Name</dt><dd>내고웍스 (Naego Works)</dd>
+      <dt>대표 · Founder</dt><dd>신동현 (Donghyeon Shin)</dd>
+      <dt>D-U-N-S</dt><dd>697009634</dd>
+      <dt>주소 · Address</dt><dd>경상북도 경산시 청운1로 2 · 2 Cheongun 1-ro, Gyeongsan-si, Gyeongsangbuk-do, Republic of Korea</dd>
+      <dt>문의 · Contact</dt><dd><a href="mailto:contact@naegoworks.com">contact@naegoworks.com</a></dd>
+    </dl>
+    <div class="legal">
+      <span>Copyright © 2026 Naego Works. All rights reserved.</span>
+      <span><a href="jellypang/">젤리팡 개인정보 처리방침</a> · <a href="https://donghyeun02.github.io/maze-keep/">미로성 개인정보 처리방침</a></span>
+    </div>
+  </div>
+</footer>
 <script src="scrolly.js" defer></script>
 </body>
 </html>
