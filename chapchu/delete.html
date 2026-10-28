@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>찹츄 키우기 계정 삭제</title>
+<meta name="description" content="찹츄 키우기(Chapchu Idle) 계정과 데이터 삭제 방법">
+<style>
+  :root {
+    --color-surface: #fbf4e6;
+    --color-card: #fffdf8;
+    --color-text: #2b2420;
+    --color-muted: #6b5d52;
+    --color-accent: #c4622d;
+    --color-line: #eadcc5;
+    --space: clamp(1rem, 0.8rem + 1vw, 1.5rem);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-surface: #1d1916;
+      --color-card: #272220;
+      --color-text: #f3ebe0;
+      --color-muted: #b8a999;
+      --color-accent: #f2a35a;
+      --color-line: #3a332e;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--color-surface);
+    color: var(--color-text);
+    font: 16px/1.7 -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+  }
+  main { max-width: 720px; margin: 0 auto; padding: calc(var(--space) * 2) 16px; }
+  .banner {
+    display: block; width: 100%; height: auto; aspect-ratio: 1200 / 514;
+    border-radius: 18px; margin-bottom: var(--space); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  }
+  header { display: flex; align-items: center; gap: 14px; margin-bottom: var(--space); }
+  header img { width: 64px; height: 64px; border-radius: 15px; }
+  h1 { font-size: 1.6rem; margin: 0; line-height: 1.25; }
+  header p { margin: 2px 0 0; color: var(--color-muted); font-size: 0.9rem; }
+  nav { display: flex; gap: 8px; margin-bottom: var(--space); flex-wrap: wrap; }
+  nav a {
+    padding: 6px 14px; border-radius: 999px; border: 1px solid var(--color-line);
+    color: var(--color-text); text-decoration: none; font-size: 0.9rem;
+  }
+  nav a:hover, nav a:focus-visible { border-color: var(--color-accent); color: var(--color-accent); }
+  section {
+    background: var(--color-card); border: 1px solid var(--color-line); border-radius: 14px;
+    padding: var(--space); margin-bottom: var(--space);
+  }
+  h2 { font-size: 1.2rem; margin: 0 0 0.6rem; }
+  h3 { font-size: 1rem; margin: 1.2rem 0 0.3rem; }
+  p, li { color: var(--color-text); }
+  .muted { color: var(--color-muted); font-size: 0.9rem; }
+  a { color: var(--color-accent); }
+  table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+  td { padding: 6px 0; border-bottom: 1px solid var(--color-line); vertical-align: top; }
+  td:first-child { color: var(--color-muted); width: 34%; padding-right: 12px; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <div>
+      <h1>찹츄 키우기 계정·데이터 삭제</h1>
+      <p>Chapchu Idle · Account &amp; data deletion · 내고웍스(Naego Works)</p>
+    </div>
+  </header>
+  <nav aria-label="바로가기"><a href="#ko">한국어</a><a href="#en">English</a><a href="./">개인정보 처리방침 · Privacy</a><a href="../">내고웍스 · Naego Works</a></nav>
+  <section id="ko" lang="ko">
+    <h2>삭제 요청 방법</h2>
+    <h3>방법 1. 게임 안에서 바로 삭제 (권장)</h3>
+    <ol>
+      <li>「찹츄 키우기」를 실행합니다.</li>
+      <li>화면 오른쪽의 <strong>설정</strong> 버튼을 누릅니다.</li>
+      <li><strong>계정 삭제</strong> → <strong>삭제하기</strong>를 누릅니다.</li>
+    </ol>
+    <p>서버와 기기의 게임 데이터가 즉시 삭제되고, 게임은 처음부터 다시 시작됩니다.</p>
+
+    <h3>방법 2. 이메일로 요청 (앱을 지운 경우)</h3>
+    <p><a href="mailto:contact@naegoworks.com?subject=%5B%EC%B0%B9%EC%B8%84%20%ED%82%A4%EC%9A%B0%EA%B8%B0%5D%20%EA%B3%84%EC%A0%95%20%EC%82%AD%EC%A0%9C%20%EC%9A%94%EC%B2%AD">contact@naegoworks.com</a> 으로 제목 <strong>[찹츄 키우기] 계정 삭제 요청</strong>, 본문에 게임 설정 화면에 표시된 <strong>플레이어 번호</strong>(알 수 없으면 기기 종류와 마지막 접속일)를 적어 보내 주세요. 확인 후 영업일 기준 7일 안에 삭제하고 답장드립니다.</p>
+
+    <h3>삭제되는 데이터</h3>
+    <table>
+      <tr><td>즉시 삭제</td><td>게스트 계정 번호, 게임 진행 데이터(스테이지, 강화, 뼈다귀, 친구, 재화, 접속일), 우편 수령 기록</td></tr>
+      <tr><td>보관 후 삭제</td><td>결제 기록(영수증·거래 번호·구매 상품): 「전자상거래 등에서의 소비자보호에 관한 법률」에 따라 <strong>5년</strong> 보관 후 삭제<br>서버 백업본: 최대 <strong>14일</strong> 뒤 자동 삭제</td></tr>
+      <tr><td>회사가 갖지 않는 정보</td><td>광고 ID 등 광고 데이터는 Google(AdMob)의 정책에 따릅니다. 기기 설정에서 광고 ID를 재설정·삭제할 수 있습니다</td></tr>
+    </table>
+    <p class="muted">삭제한 진행 데이터와 구매한 상품은 되돌릴 수 없습니다.</p>
+  </section>
+  <section id="en" lang="en">
+    <h2>How to delete your account and data</h2>
+    <h3>Option 1. In the game (recommended)</h3>
+    <ol>
+      <li>Open Chapchu Idle.</li>
+      <li>Tap <strong>Settings</strong> (설정) on the right side of the screen.</li>
+      <li>Tap <strong>Delete account</strong> (계정 삭제) → <strong>Delete</strong> (삭제하기).</li>
+    </ol>
+    <p>Your game data is deleted from our servers and your device immediately.</p>
+    <h3>Option 2. By email (if the app is uninstalled)</h3>
+    <p>Email <a href="mailto:contact@naegoworks.com?subject=%5BChapchu%20Idle%5D%20Account%20deletion%20request">contact@naegoworks.com</a> with the subject <strong>[Chapchu Idle] Account deletion request</strong> and your <strong>player number</strong> shown in the game settings (or your device model and last play date). We delete it within 7 business days and reply.</p>
+    <h3>What is deleted</h3>
+    <table>
+      <tr><td>Deleted immediately</td><td>Guest account ID, game progress (stages, upgrades, bones, friends, currencies, login days), mail claim records</td></tr>
+      <tr><td>Kept, then deleted</td><td>Purchase records (receipts, transaction IDs, items): kept for <strong>5 years</strong> as required by Korean consumer law<br>Server backups: deleted automatically within <strong>14 days</strong></td></tr>
+      <tr><td>Not held by us</td><td>Advertising data such as the advertising ID follows Google (AdMob) policy; you can reset or delete it in your device settings</td></tr>
+    </table>
+  </section>
+  <section id="support">
+    <p class="muted">내고웍스 · Naego Works · <a href="mailto:contact@naegoworks.com">contact@naegoworks.com</a></p>
+  </section>
+</main>
+</body>
+</html>
