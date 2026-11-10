@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Naego Works 내고웍스</title>
-<meta name="description" content="Naego Works(내고웍스)는 작고 단단한 모바일 게임을 만드는 1인 게임 스튜디오입니다. 미로성, 젤리팡. Naego Works is an independent mobile game studio in South Korea.">
+<meta name="description" content="Naego Works(내고웍스)는 작고 단단한 모바일 게임을 만드는 1인 게임 스튜디오입니다. 미로성, 찹츄 키우기. Naego Works is an independent mobile game studio in South Korea.">
 <meta property="og:title" content="Naego Works 내고웍스">
 <meta property="og:description" content="작고 단단한 모바일 게임을 만드는 1인 게임 스튜디오">
 <meta property="og:image" content="https://naegoworks.com/maze-keep-banner.jpg">
@@ -103,10 +103,12 @@
   .split .caption p.on { opacity: 1; transform: none; }
   .split .caption b { color: var(--g); font-weight: 700; }
   .scrolly.maze { --g: #3f8f2c; }
-  .scrolly.jelly { --g: #e0418f; }
+  .scrolly.chapchu { --g: #d9822b; }
   .scrolly.maze { --scene-bg: linear-gradient(180deg, #d9efbd, #9fd685); }
   .scrolly .appcard { border-radius: 18px; }
-  .scrolly.jelly { --scene-bg: linear-gradient(180deg, #ffe0f0, #f7b3dc 65%, #e2b6f3); }
+  .split .shot { display: block; width: 100%; height: clamp(360px, 40vw, 520px); object-fit: cover; border-radius: 28px; }
+  .split .lead { margin: 28px 0 0; font-size: clamp(26px, 1.4vw + 16px, 36px); font-weight: 700; line-height: 1.12; letter-spacing: -0.02em; }
+  .split .lead b { color: var(--g); }
 
 
   /* Game card under each scene: store banner, icon, buttons */
@@ -157,7 +159,8 @@
     .split.flip .copy { order: 0; }
     .split .copy { text-align: center; }
     .split .caption { height: 2.6em; margin-top: 14px; font-size: 22px; }
-    .split canvas { height: 380px; }
+    .split canvas, .split .shot { height: 380px; }
+    .split .lead { margin-top: 14px; font-size: 22px; }
     .contact { grid-template-columns: 1fr; gap: 12px; }
     .appcard { margin-top: 40px; }
     .appcard .row { grid-template-columns: 68px 1fr; gap: 12px; padding: 0 16px 18px; }
@@ -176,7 +179,7 @@
   <nav aria-label="주 메뉴">
     <a class="logo" href="#"><img src="brand/naego-mark.png" alt="" width="28" height="28">Naego Works</a>
     <a class="item" href="#maze-keep">미로성</a>
-    <a class="item" href="#jellypang">젤리팡</a>
+    <a class="item" href="#chapchu">찹츄 키우기</a>
     <a class="item" href="#contact">문의</a>
   </nav>
 </header>
@@ -193,7 +196,7 @@
     </div>
     <div class="icons">
       <a href="#maze-keep"><img src="maze-keep.png" alt="미로성" width="112" height="112"></a>
-      <a href="#jellypang"><img src="jellypang.png" alt="젤리팡" width="112" height="112"></a>
+      <a href="#chapchu"><img src="chapchu.png" alt="찹츄 키우기" width="112" height="112"></a>
     </div>
   </section>
 
@@ -211,46 +214,41 @@
       <canvas role="img" aria-label="블록이 떨어져 미로를 만들고, 타워가 세워지고, 몬스터가 성으로 가다 쓰러지는 애니메이션"></canvas>
     </div>
     <article class="appcard">
-      <a href="https://apps.apple.com/kr/app/id6818739374" tabindex="-1" aria-hidden="true"><img class="banner" src="maze-keep-banner.jpg" alt="" width="1200" height="514" loading="lazy"></a>
+      <a href="https://tossminiapp.com/d/maze-keep/launch?referrer=appsintoss.common_module_share" tabindex="-1" aria-hidden="true"><img class="banner" src="maze-keep-banner.jpg" alt="" width="1200" height="514" loading="lazy"></a>
       <div class="row">
         <img class="icon" src="maze-keep.png" alt="미로성 앱 아이콘" width="112" height="112">
         <div>
           <h3>미로성 · Maze Keep</h3>
-          <p>퍼즐 디펜스 · iOS · 토스</p>
+          <p>퍼즐 디펜스 · 토스</p>
         </div>
         <div class="ctas">
           <a class="pill fill" href="https://tossminiapp.com/d/maze-keep/launch?referrer=appsintoss.common_module_share">토스에서 바로 하기</a>
-          <a class="pill line" href="https://apps.apple.com/kr/app/id6818739374">App Store</a>
           <a class="pill line" href="maze-keep/">개인정보 · 지원</a>
         </div>
       </div>
     </article>
   </section>
 
-  <section class="tile scrolly jelly" id="jellypang" aria-labelledby="jelly-title">
-    <div class="split flip" id="scene-jelly">
+  <section class="tile scrolly chapchu" id="chapchu" aria-labelledby="chapchu-title">
+    <div class="split flip">
       <div class="copy">
-        <h2 id="jelly-title">젤리팡</h2>
-        <p class="sub">같은 젤리를 꺾인 선으로 이어, 팡.</p>
-        <div class="caption" aria-live="off">
-          <p data-at="0,0.32"><b>말랑한 젤리</b>가<br>판 위로 쏟아지면</p>
-          <p data-at="0.32,0.8">같은 젤리를<br><b>꺾인 선으로</b> 이어요</p>
-          <p data-at="0.8,1.01">그리고,<br><b>팡!</b></p>
-        </div>
+        <h2 id="chapchu-title">찹츄 키우기</h2>
+        <p class="sub">강아지 찹츄와 친구들이 쭉쭉 자라는 방치형 RPG.</p>
+        <p class="lead">켜 두기만 해도 <b>알아서 싸우고</b>,<br>들어올 때마다 <b>쑥쑥 강해져요</b></p>
       </div>
-      <canvas role="img" aria-label="젤리가 판에 떨어지고, 같은 젤리 두 개가 꺾인 선으로 이어지며 터지는 애니메이션"></canvas>
+      <img class="shot" src="chapchu-scene.jpg" alt="찹츄와 강아지 친구들이 마을 앞 언덕을 달리는 그림" width="960" height="814" loading="lazy">
     </div>
     <article class="appcard">
-      <a href="jellypang/" tabindex="-1" aria-hidden="true"><img class="banner" src="jellypang-banner.jpg" alt="" width="1200" height="514" loading="lazy"></a>
+      <a href="chapchu/" tabindex="-1" aria-hidden="true"><img class="banner" src="chapchu-banner.jpg" alt="" width="1200" height="514" loading="lazy"></a>
       <div class="row">
-        <img class="icon" src="jellypang.png" alt="젤리팡 앱 아이콘" width="112" height="112">
+        <img class="icon" src="chapchu.png" alt="찹츄 키우기 앱 아이콘" width="112" height="112">
         <div>
-          <h3>젤리팡 · JellyPang</h3>
-          <p>사천성 퍼즐 · iOS</p>
+          <h3>찹츄 키우기 · Chapchu Idle</h3>
+          <p>방치형 RPG · iOS · Android</p>
         </div>
         <div class="ctas">
           <span class="badge">출시 예정</span>
-          <a class="pill line" href="jellypang/">개인정보 · 지원</a>
+          <a class="pill line" href="chapchu/">개인정보 · 지원</a>
         </div>
       </div>
     </article>
@@ -281,7 +279,7 @@
 
 <footer>
   <div class="wrap">
-    <p class="say">미로성은 App Store에서 받거나, 앱 설치 없이 토스에서 바로 할 수 있습니다. 젤리팡은 출시 준비 중입니다. 두 게임 모두 개인정보를 수집하지 않습니다.</p>
+    <p class="say">미로성은 앱 설치 없이 토스에서 바로 할 수 있습니다. 찹츄 키우기는 출시 준비 중입니다.</p>
     <dl>
       <dt>상호 · Name</dt><dd>내고웍스 (Naego Works)</dd>
       <dt>대표 · Founder</dt><dd>신동현 (Donghyeon Shin)</dd>
@@ -291,7 +289,7 @@
     </dl>
     <div class="legal">
       <span>Copyright © 2026 Naego Works. All rights reserved.</span>
-      <span><a href="jellypang/">젤리팡 개인정보 처리방침</a> · <a href="maze-keep/">미로성 개인정보 처리방침</a></span>
+      <span><a href="chapchu/">찹츄 키우기 개인정보 처리방침</a> · <a href="maze-keep/">미로성 개인정보 처리방침</a></span>
     </div>
   </div>
 </footer>
