@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Naego Works 내고웍스</title>
-<meta name="description" content="Naego Works(내고웍스)는 작고 단단한 모바일 게임을 만드는 1인 게임 스튜디오입니다. 미로성, 찹츄 키우기. Naego Works is an independent mobile game studio in South Korea.">
+<meta name="description" content="Naego Works(내고웍스)는 작고 단단한 모바일 게임을 만드는 1인 게임 스튜디오입니다. 미로성, 작당모의, 찹츄 키우기. Naego Works is an independent mobile game studio in South Korea.">
 <meta property="og:title" content="Naego Works 내고웍스">
 <meta property="og:description" content="작고 단단한 모바일 게임을 만드는 1인 게임 스튜디오">
 <meta property="og:image" content="https://naegoworks.com/maze-keep-banner.jpg">
@@ -104,11 +104,14 @@
   .split .caption b { color: var(--g); font-weight: 700; }
   .scrolly.maze { --g: #3f8f2c; }
   .scrolly.chapchu { --g: #d9822b; }
+  .scrolly.jakdang { --g: #3d7fb3; }
+  .wide { max-width: 980px; margin: 0 auto 28px; text-align: center; }
+  .wide .shot { display: block; width: 100%; height: auto; aspect-ratio: 1200 / 420; margin-top: 32px; border-radius: 28px; }
   .scrolly.maze { --scene-bg: linear-gradient(180deg, #d9efbd, #9fd685); }
   .scrolly .appcard { border-radius: 18px; }
   .split .shot { display: block; width: 100%; height: clamp(360px, 40vw, 520px); object-fit: cover; border-radius: 28px; }
-  .split .lead { margin: 28px 0 0; font-size: clamp(26px, 1.4vw + 16px, 36px); font-weight: 700; line-height: 1.12; letter-spacing: -0.02em; }
-  .split .lead b { color: var(--g); }
+  .split .lead, .wide .lead { margin: 28px 0 0; font-size: clamp(26px, 1.4vw + 16px, 36px); font-weight: 700; line-height: 1.12; letter-spacing: -0.02em; }
+  .split .lead b, .wide .lead b { color: var(--g); }
 
 
   /* Game card under each scene: store banner, icon, buttons */
@@ -135,6 +138,7 @@
   /* Contact */
   .contact { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 980px; margin: 40px auto 0; padding-bottom: 72px; text-align: left; }
   .contact div { background: var(--white); border-radius: 18px; padding: 28px; }
+  .tile:not(.gray) .contact div { background: var(--gray); }
   .contact h3 { margin: 0 0 6px; font-size: 21px; font-weight: 600; }
   .contact p { margin: 0 0 14px; color: var(--muted); font-size: 15px; }
   .contact a { font-size: 17px; }
@@ -179,6 +183,7 @@
   <nav aria-label="주 메뉴">
     <a class="logo" href="#"><img src="brand/naego-mark.png" alt="" width="28" height="28">Naego Works</a>
     <a class="item" href="#maze-keep">미로성</a>
+    <a class="item" href="#jakdang">작당모의</a>
     <a class="item" href="#chapchu">찹츄 키우기</a>
     <a class="item" href="#contact">문의</a>
   </nav>
@@ -196,6 +201,7 @@
     </div>
     <div class="icons">
       <a href="#maze-keep"><img src="maze-keep.png" alt="미로성" width="112" height="112"></a>
+      <a href="#jakdang"><img src="jakdang.png" alt="작당모의" width="112" height="112"></a>
       <a href="#chapchu"><img src="chapchu.png" alt="찹츄 키우기" width="112" height="112"></a>
     </div>
   </section>
@@ -229,7 +235,31 @@
     </article>
   </section>
 
-  <section class="tile scrolly chapchu" id="chapchu" aria-labelledby="chapchu-title">
+  <section class="tile scrolly jakdang" id="jakdang" aria-labelledby="jakdang-title">
+    <div class="wide">
+      <div class="copy">
+        <h2 id="jakdang-title">작당모의</h2>
+        <p class="sub">친구들 캐릭터가 내 바탕화면 아래에 모여 사는 앱.</p>
+        <p class="lead">초대 코드 하나로 만드는 <b>바탕화면 단톡방</b>,<br>오늘 커피는 <b>누가 쏠까요</b></p>
+      </div>
+      <img class="shot" src="jakdang-scene.jpg" alt="바탕화면 아래에 친구들 픽셀 캐릭터가 서 있고, 커피 뽑기에서 한 명이 뽑힌 모습" width="1200" height="420" loading="lazy">
+    </div>
+    <article class="appcard">
+      <a href="https://jakdang.naegoworks.com" tabindex="-1" aria-hidden="true"><img class="banner" src="jakdang-banner.jpg" alt="" width="1200" height="440" loading="lazy"></a>
+      <div class="row">
+        <img class="icon" src="jakdang.png" alt="작당모의 앱 아이콘" width="112" height="112">
+        <div>
+          <h3>작당모의</h3>
+          <p>바탕화면 단톡방 · macOS · Windows</p>
+        </div>
+        <div class="ctas">
+          <a class="pill fill" href="https://jakdang.naegoworks.com">다운로드</a>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <section class="tile gray scrolly chapchu" id="chapchu" aria-labelledby="chapchu-title">
     <div class="split flip">
       <div class="copy">
         <h2 id="chapchu-title">찹츄 키우기</h2>
@@ -254,7 +284,7 @@
     </article>
   </section>
 
-  <section class="tile gray" id="contact" aria-labelledby="contact-title">
+  <section class="tile" id="contact" aria-labelledby="contact-title">
     <h2 id="contact-title">문의</h2>
     <p class="sub">무엇이든 편하게 메일 주세요.</p>
     <div class="contact">
@@ -279,7 +309,7 @@
 
 <footer>
   <div class="wrap">
-    <p class="say">미로성은 앱 설치 없이 토스에서 바로 할 수 있습니다. 찹츄 키우기는 출시 준비 중입니다.</p>
+    <p class="say">미로성은 앱 설치 없이 토스에서 바로 할 수 있습니다. 작당모의는 맥·윈도우에서 받을 수 있습니다. 찹츄 키우기는 출시 준비 중입니다.</p>
     <dl>
       <dt>상호 · Name</dt><dd>내고웍스 (Naego Works)</dd>
       <dt>대표 · Founder</dt><dd>신동현 (Donghyeon Shin)</dd>
