@@ -100,12 +100,12 @@
 
     <h3>3. 보유 기간과 파기</h3>
     <table>
-      <tr><td>게임 계정·저장·로그인 연결·세션</td><td>계정 삭제 시 즉시 파기. 마지막 접속 후 3년 동안 접속이 없으면 파기</td></tr>
+      <tr><td>게임 계정·저장·로그인 연결·세션</td><td>계정 삭제를 요청하면 즉시 파기. 삭제 요청이 없으면 서비스를 운영하는 동안 2절의 목적을 위해 보관합니다(장기 미접속 계정을 자동으로 파기하는 절차는 현재 운영하지 않으며, 도입하면 이 방침을 바꿔 미리 알립니다). 서비스를 종료하면 지체 없이 파기</td></tr>
       <tr><td>결제·청약철회·환불 기록, 재화 장부, 소환 기록</td><td>「전자상거래 등에서의 소비자보호에 관한 법률」에 따라 5년 보관 후 파기(계정을 삭제해도 플레이어 번호와 함께 이 기간 동안 남습니다). 소비자 불만·분쟁 처리 기록은 3년</td></tr>
       <tr><td>요청 처리 기록</td><td>중복 요청 방지용 기록은 30일 뒤 자동 삭제</td></tr>
       <tr><td>서버 로그(IP 주소 등)</td><td>최대 60일 뒤 자동 삭제</td></tr>
       <tr><td>분 단위 접속자 수</td><td>30일 뒤 자동 삭제 (개인을 알아볼 수 없는 숫자)</td></tr>
-      <tr><td>서버 백업</td><td>암호화해 보관하며 약 5주 안에 순서대로 지워집니다. 삭제한 계정도 이 기간 동안 백업본에 남을 수 있으나 복원해 쓰지 않습니다</td></tr>
+      <tr><td>서버 백업</td><td>서버에서 매일·매주 암호화 백업을 만들며, 일일 백업 7개·주간 백업 4개만 남기고 오래된 것부터 지웁니다(약 5주). 운영자가 별도 보관용으로 받아 두는 암호화 사본도 최근 30개까지만 남깁니다. 삭제한 계정도 백업이 순환될 때까지 백업본에 남을 수 있으나, 장애 복구 외에는 쓰지 않습니다</td></tr>
       <tr><td>문의 기록</td><td>처리 완료 후 3년 (분쟁 대응) 뒤 파기</td></tr>
     </table>
     <p>전자 파일은 복구할 수 없는 방법으로 지우고, 종이 문서는 만들지 않습니다.</p>
@@ -177,7 +177,7 @@
     <h3>이전 방침(2026년 11월 5일)과 달라진 점</h3>
     <ul class="muted">
       <li>Apple로 로그인·Google 로그인(선택)과 계정 고유 식별자 처리를 추가하고, 이메일·이름은 저장하지 않는다고 밝혔습니다.</li>
-      <li>서버가 저장하는 항목(장부, 소환 기록, 환불 기록, 광고 확인 기록, 제재 정보, 일별 접속)과 항목별 보관 기간(요청 기록 30일, 서버 로그 60일, 백업 약 5주)을 구체적으로 적었습니다.</li>
+      <li>서버가 저장하는 항목(장부, 소환 기록, 환불 기록, 광고 확인 기록, 제재 정보, 일별 접속)과 항목별 보관 기간(요청 기록 30일, 서버 로그 60일, 백업 순환)을 구체적으로 적었습니다.</li>
       <li>국외 이전 표(Google·Apple)와 거부 방법, ATT·UMP·광고 식별자 안내를 새로 넣었고, 쓰지 않는 Firebase 항목은 뺐습니다.</li>
       <li>실제 계정 삭제 경로(설정 → 계정 → 계정 삭제, 손님 계정은 이메일)와 삭제 후 남는 법정 보관 기록을 바로잡았습니다.</li>
       <li>아동, 법정대리인 권리, 안전성 조치, 침해 신고 기관 안내를 보강했습니다. 이전 방침은 출시 전 버전에 쓰였습니다.</li>
@@ -197,7 +197,7 @@
       <li><strong>Server logs:</strong> IP address, request times and errors. No chat or user-generated content exists in the game.</li>
     </ul>
     <h3>Retention</h3>
-    <p>Account and game data are deleted when you delete your account, or after 3 years of inactivity. Purchase, refund, ledger and summon records are kept for 5 years as required by Korean consumer law. Request records are deleted after 30 days, server logs after 60 days, and encrypted backups rotate out within about 5 weeks.</p>
+    <p>Account and game data are deleted when you delete your account; otherwise they are kept while the service operates (we do not currently run automatic deletion of inactive accounts, and will update this policy before introducing it). Purchase, refund, ledger and summon records are kept for 5 years as required by Korean consumer law. Request records are deleted after 30 days, server logs after 60 days, and encrypted server backups rotate (7 daily and 4 weekly copies, about 5 weeks); any encrypted operator copy keeps only the latest 30.</p>
     <h3>Service providers and international transfer</h3>
     <p>NAVER Cloud (Korea) hosts our servers and database. Google LLC (AdMob, Google Play, Google sign-in) and Apple Inc. (App Store, Sign in with Apple) receive the data needed for ads, purchases and sign-in, in the USA and other countries. We do not sell or share your personal information with other third parties.</p>
     <h3>Advertising choices</h3>
