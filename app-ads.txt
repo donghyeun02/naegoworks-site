@@ -1,0 +1,5 @@
+# app-ads.txt for naegoworks.com (Naego Works)
+# Placeholder: the Google AdMob publisher line will be added here once the
+# AdMob account exists. It will look like:
+#   google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
+# Until then this file intentionally contains no seller records.

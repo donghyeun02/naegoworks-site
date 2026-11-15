@@ -54,10 +54,11 @@
   h2 { font-size: 1.2rem; margin: 0 0 0.6rem; }
   h3 { font-size: 1rem; margin: 1.2rem 0 0.3rem; }
   p, li { color: var(--color-text); }
+  ul, ol { padding-left: 1.25rem; margin: 0.3rem 0 0.6rem; }
   .muted { color: var(--color-muted); font-size: 0.9rem; }
-  a { color: var(--color-accent); }
+  a { color: var(--color-accent); overflow-wrap: anywhere; }
   table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
-  td { padding: 6px 0; border-bottom: 1px solid var(--color-line); vertical-align: top; }
+  td { padding: 6px 0; border-bottom: 1px solid var(--color-line); vertical-align: top; overflow-wrap: anywhere; }
   td:first-child { color: var(--color-muted); width: 34%; padding-right: 12px; }
 </style>
 </head>
@@ -69,43 +70,43 @@
       <p>Chapchu Idle · Account &amp; data deletion · 내고웍스(Naego Works)</p>
     </div>
   </header>
-  <nav aria-label="바로가기"><a href="#ko">한국어</a><a href="#en">English</a><a href="./">개인정보 처리방침 · Privacy</a><a href="../">내고웍스 · Naego Works</a></nav>
+  <nav aria-label="바로가기"><a href="#ko">한국어</a><a href="#en">English</a><a href="./">개인정보 처리방침 · Privacy</a><a href="./terms.html">이용약관 · Terms</a><a href="../">내고웍스 · Naego Works</a></nav>
   <section id="ko" lang="ko">
     <h2>삭제 요청 방법</h2>
-    <h3>방법 1. 게임 안에서 바로 삭제 (권장)</h3>
+    <h3>방법 1. 게임 안에서 바로 삭제 (Apple·Google 로그인한 계정)</h3>
     <ol>
-      <li>「찹츄 키우기」를 실행합니다.</li>
-      <li>화면 오른쪽의 <strong>설정</strong> 버튼을 누릅니다.</li>
-      <li><strong>계정 삭제</strong> → <strong>삭제하기</strong>를 누릅니다.</li>
+      <li>「찹츄 키우기」를 실행하고 <strong>설정</strong>을 엽니다.</li>
+      <li><strong>계정</strong> 구역에서 <strong>계정 삭제</strong>를 누릅니다.</li>
+      <li>확인 창에서 <strong>계정 지우기</strong>를 누릅니다.</li>
     </ol>
-    <p>서버와 기기의 게임 데이터가 즉시 삭제되고, 게임은 처음부터 다시 시작됩니다.</p>
+    <p>서버의 계정과 게임 기록이 즉시 지워지고, 이 기기의 게임은 처음부터 다시 시작합니다.</p>
 
-    <h3>방법 2. 이메일로 요청 (앱을 지운 경우)</h3>
-    <p><a href="mailto:contact@naegoworks.com?subject=%5B%EC%B0%B9%EC%B8%84%20%ED%82%A4%EC%9A%B0%EA%B8%B0%5D%20%EA%B3%84%EC%A0%95%20%EC%82%AD%EC%A0%9C%20%EC%9A%94%EC%B2%AD">contact@naegoworks.com</a> 으로 제목 <strong>[찹츄 키우기] 계정 삭제 요청</strong>, 본문에 게임 설정 화면에 표시된 <strong>플레이어 번호</strong>(알 수 없으면 기기 종류와 마지막 접속일)를 적어 보내 주세요. 확인 후 영업일 기준 7일 안에 삭제하고 답장드립니다.</p>
+    <h3>방법 2. 이메일로 요청 (손님 계정이거나 앱을 지운 경우)</h3>
+    <p>로그인하지 않은 손님 계정은 게임 안에 삭제 단추가 없으니 이메일로 요청해 주세요. <a href="mailto:contact@naegoworks.com?subject=%5B%EC%B0%B9%EC%B8%84%20%ED%82%A4%EC%9A%B0%EA%B8%B0%5D%20%EA%B3%84%EC%A0%95%20%EC%82%AD%EC%A0%9C%20%EC%9A%94%EC%B2%AD">contact@naegoworks.com</a> 으로 제목 <strong>[찹츄 키우기] 계정 삭제 요청</strong>, 본문에 <strong>설정 → 고객센터</strong>에 나오는 <strong>사용자 번호</strong>를 적어 보내 주세요. 앱을 지워 번호를 모르면 기기 종류, 처음 시작한 날, 마지막 접속일, 결제했다면 영수증을 적어 주세요. 본인 확인 뒤 10일 안에 지우고 답장드립니다.</p>
 
     <h3>삭제되는 데이터</h3>
     <table>
-      <tr><td>즉시 삭제</td><td>게스트 계정 번호, 게임 진행 데이터(스테이지, 강화, 뼈다귀, 친구, 재화, 접속일), 우편 수령 기록</td></tr>
-      <tr><td>보관 후 삭제</td><td>결제 기록(영수증·거래 번호·구매 상품): 「전자상거래 등에서의 소비자보호에 관한 법률」에 따라 <strong>5년</strong> 보관 후 삭제<br>서버 백업본: 최대 <strong>14일</strong> 뒤 자동 삭제</td></tr>
-      <tr><td>회사가 갖지 않는 정보</td><td>광고 ID 등 광고 데이터는 Google(AdMob)의 정책에 따릅니다. 기기 설정에서 광고 ID를 재설정·삭제할 수 있습니다</td></tr>
+      <tr><td>즉시 삭제</td><td>플레이어 번호와 계정, 닉네임, 게임 상태·저장 데이터, 도감, 던전·주간 보스 기록, 의심 기록, 광고 보상 확인 기록, 일별 접속 기록, Apple·Google 로그인 연결, 기기 이전 코드, 세션</td></tr>
+      <tr><td>보관 후 삭제</td><td>결제·청약철회·환불 기록, 재화 장부, 소환 기록: 「전자상거래 등에서의 소비자보호에 관한 법률」에 따라 <strong>5년</strong> 보관 후 삭제 (플레이어 번호만 남고 이름·연락처는 원래 없습니다)<br>서버 로그: 최대 <strong>60일</strong> 뒤 자동 삭제<br>암호화된 서버 백업: 약 <strong>5주</strong> 안에 순서대로 삭제</td></tr>
+      <tr><td>회사가 갖지 않는 정보</td><td>광고 ID 등 광고 데이터는 Google(AdMob)의 정책을 따릅니다. 기기 설정에서 광고 ID를 재설정·삭제할 수 있습니다. Apple·Google 쪽 로그인 연결은 각 계정 설정에서 끊을 수 있습니다</td></tr>
     </table>
-    <p class="muted">삭제한 진행 데이터와 구매한 상품은 되돌릴 수 없습니다.</p>
+    <p class="muted">삭제한 진행 데이터와 구매한 상품은 되돌릴 수 없습니다. 받지 않은 결제 상품이 있으면 삭제 전에 환불(청약철회)을 먼저 요청해 주세요.</p>
   </section>
   <section id="en" lang="en">
     <h2>How to delete your account and data</h2>
-    <h3>Option 1. In the game (recommended)</h3>
+    <h3>Option 1. In the game (accounts signed in with Apple or Google)</h3>
     <ol>
-      <li>Open Chapchu Idle.</li>
-      <li>Tap <strong>Settings</strong> (설정) on the right side of the screen.</li>
-      <li>Tap <strong>Delete account</strong> (계정 삭제) → <strong>Delete</strong> (삭제하기).</li>
+      <li>Open Chapchu Idle and open <strong>Settings</strong> (설정).</li>
+      <li>In the <strong>Account</strong> (계정) section, tap <strong>Delete account</strong> (계정 삭제).</li>
+      <li>Confirm with <strong>Delete account</strong> (계정 지우기).</li>
     </ol>
-    <p>Your game data is deleted from our servers and your device immediately.</p>
-    <h3>Option 2. By email (if the app is uninstalled)</h3>
-    <p>Email <a href="mailto:contact@naegoworks.com?subject=%5BChapchu%20Idle%5D%20Account%20deletion%20request">contact@naegoworks.com</a> with the subject <strong>[Chapchu Idle] Account deletion request</strong> and your <strong>player number</strong> shown in the game settings (or your device model and last play date). We delete it within 7 business days and reply.</p>
+    <p>Your account and game data are deleted from our servers immediately, and the game restarts from the beginning on this device.</p>
+    <h3>Option 2. By email (guest accounts, or if the app is uninstalled)</h3>
+    <p>Guest accounts have no delete button in the game. Email <a href="mailto:contact@naegoworks.com?subject=%5BChapchu%20Idle%5D%20Account%20deletion%20request">contact@naegoworks.com</a> with the subject <strong>[Chapchu Idle] Account deletion request</strong> and the <strong>player number</strong> shown in <strong>Settings → Support</strong> (or your device model, start date, last play date and any receipts). We verify the request and delete within 10 days.</p>
     <h3>What is deleted</h3>
     <table>
-      <tr><td>Deleted immediately</td><td>Guest account ID, game progress (stages, upgrades, bones, friends, currencies, login days), mail claim records</td></tr>
-      <tr><td>Kept, then deleted</td><td>Purchase records (receipts, transaction IDs, items): kept for <strong>5 years</strong> as required by Korean consumer law<br>Server backups: deleted automatically within <strong>14 days</strong></td></tr>
+      <tr><td>Deleted immediately</td><td>Player account and nickname, game state and saves, collection, dungeon and weekly boss records, flags, ad reward records, daily activity, Apple/Google sign-in links, transfer codes, sessions</td></tr>
+      <tr><td>Kept, then deleted</td><td>Purchase, withdrawal and refund records, currency ledger and summon records: kept for <strong>5 years</strong> under Korean consumer law<br>Server logs: within <strong>60 days</strong><br>Encrypted backups: within about <strong>5 weeks</strong></td></tr>
       <tr><td>Not held by us</td><td>Advertising data such as the advertising ID follows Google (AdMob) policy; you can reset or delete it in your device settings</td></tr>
     </table>
   </section>

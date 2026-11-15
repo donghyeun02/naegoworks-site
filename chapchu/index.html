@@ -54,10 +54,11 @@
   h2 { font-size: 1.2rem; margin: 0 0 0.6rem; }
   h3 { font-size: 1rem; margin: 1.2rem 0 0.3rem; }
   p, li { color: var(--color-text); }
+  ul, ol { padding-left: 1.25rem; margin: 0.3rem 0 0.6rem; }
   .muted { color: var(--color-muted); font-size: 0.9rem; }
-  a { color: var(--color-accent); }
+  a { color: var(--color-accent); overflow-wrap: anywhere; }
   table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
-  td { padding: 6px 0; border-bottom: 1px solid var(--color-line); vertical-align: top; }
+  td { padding: 6px 0; border-bottom: 1px solid var(--color-line); vertical-align: top; overflow-wrap: anywhere; }
   td:first-child { color: var(--color-muted); width: 34%; padding-right: 12px; }
 </style>
 </head>
@@ -66,85 +67,153 @@
   <header>
     <div>
       <h1>찹츄 키우기 개인정보 처리방침</h1>
-      <p>Chapchu Idle Privacy Policy · 시행일 2026년 11월 5일</p>
+      <p>Chapchu Idle Privacy Policy · 시행일 2026년 11월 18일</p>
     </div>
   </header>
   <nav aria-label="바로가기"><a href="#ko">한국어</a><a href="#en">English</a><a href="./terms.html">이용약관 · Terms</a><a href="./delete.html">계정 삭제 · Delete account</a><a href="#support">지원 · Support</a><a href="../">내고웍스 · Naego Works</a></nav>
+
   <section id="ko" lang="ko">
     <h2>개인정보 처리방침</h2>
-    <p>내고웍스(이하 "회사")는 게임 「찹츄 키우기」(이하 "게임")를 제공하면서 「개인정보 보호법」 등 관련 법령을 지킵니다. 이 방침은 게임이 어떤 정보를 왜 처리하는지 설명합니다.</p>
+    <p>내고웍스(이하 "회사")는 모바일 게임 「찹츄 키우기」(이하 "게임")를 제공하면서 「개인정보 보호법」과 관련 법령을 지킵니다. 이 방침은 게임이 어떤 정보를 왜 처리하고, 얼마나 보관하며, 이용자가 어떻게 권리를 행사할 수 있는지 설명합니다.</p>
+    <p class="muted">게임은 이름, 이메일, 전화번호, 주소, 생년월일, 위치, 연락처, 사진, 카메라, 마이크 정보를 받지 않습니다. Apple·Google 로그인을 해도 이메일과 이름은 저장하지 않습니다. 게임에는 채팅이나 이용자끼리 글을 주고받는 기능이 없습니다.</p>
 
-    <h3>1. 처리하는 개인정보와 목적</h3>
+    <h3>1. 처리하는 개인정보 항목</h3>
     <table>
-      <tr><td>게임 계정 정보</td><td>게스트 계정 고유 번호(무작위 생성), 게임 진행 데이터(스테이지, 강화, 뼈다귀, 친구, 접속일 등) — 진행 저장, 기기 변경 시 이어하기, 부정 이용 방지</td></tr>
-      <tr><td>결제 정보</td><td>스토어 결제 영수증·거래 번호, 구매 상품 — 결제 확인과 상품 지급, 중복 지급 방지, 환불·문의 처리. 카드번호 등 결제 수단 정보는 애플·구글이 처리하며 회사는 받지 않습니다</td></tr>
-      <tr><td>광고 정보</td><td>광고 식별자(IDFA·광고 ID), 기기·OS 정보 — 보상형 광고 제공과 광고 성과 측정. 맞춤 광고는 이용자가 동의한 경우에만 사용합니다</td></tr>
-      <tr><td>이용·오류 정보</td><td>기기 모델, OS 버전, 앱 버전, 이용 기록, 오류 로그, 접속 IP — 서비스 개선, 오류 분석, 보안</td></tr>
-      <tr><td>문의 정보</td><td>이메일 주소와 문의 내용 — 고객 문의 응대 (이용자가 직접 보낸 경우만)</td></tr>
+      <tr><td>게임 계정 (필수)</td><td>플레이어 번호(게임이 무작위로 만든 번호), 세션 정보(로그인 유지용 토큰은 해시로만 저장), 계정 생성·마지막 접속 시각, 기기 구분 값(앱이 보내는 경우), 닉네임(기본값 「찹츄#번호」)</td></tr>
+      <tr><td>로그인 연결 (선택)</td><td>Apple로 로그인 또는 Google 로그인을 하면 해당 서비스가 발급한 계정 고유 식별자(sub)와 연결 시각. 이메일·이름은 받지 않거나 저장하지 않습니다</td></tr>
+      <tr><td>게임 기록 (필수)</td><td>저장 데이터(진행, 스테이지, 장비, 친구, 재화 등), 재화 증감 기록(장부), 소환(확률형 상품) 결과와 확률표 버전, 도감, 던전·주간 보스 기록, 우편함 수령 기록, 일별 접속 횟수</td></tr>
+      <tr><td>결제 (결제할 때)</td><td>스토어 거래 번호(Apple 거래 ID, Google 구매 토큰), 상품, 금액, 결제·처리 시각, 환불·청약철회 기록, 이용자가 정한 월 결제 한도. 카드번호 등 결제 수단 정보는 Apple·Google이 처리하며 회사는 받지 않습니다</td></tr>
+      <tr><td>광고 (광고를 볼 때)</td><td>보상형 광고를 볼 때 Google AdMob이 광고 식별자(iOS IDFA, Android 광고 ID — 이용자가 허용한 경우), IP 주소, 기기·OS 정보, 광고 노출·클릭 정보를 처리합니다. 회사 서버는 보상 확인을 위해 AdMob 서버 확인 거래 번호, 광고 단위, 보상 항목, 시각만 저장합니다</td></tr>
+      <tr><td>서비스 이용 기록 (자동)</td><td>접속 IP 주소, 요청 시각, 앱 버전, 오류 기록 — 서버 로그에 자동으로 남습니다</td></tr>
+      <tr><td>부정 이용·제재 (해당 시)</td><td>비정상 이용 의심 기록, 이용 제한 기간과 사유</td></tr>
+      <tr><td>문의 (선택)</td><td>이용자가 이메일로 문의할 때 보낸 이메일 주소, 문의 내용, 첨부한 영수증 등</td></tr>
     </table>
-    <p class="muted">게임은 이름, 전화번호, 주소, 위치, 연락처, 사진, 카메라, 마이크에 접근하지 않습니다.</p>
 
-    <h3>2. 보유 기간과 파기</h3>
-    <p>게임 계정 정보는 계정 삭제를 요청하거나 마지막 접속 후 3년이 지나면 지체 없이 파기합니다. 결제 기록은 「전자상거래 등에서의 소비자보호에 관한 법률」에 따라 5년간 보관합니다. 서버 백업본은 최대 14일 뒤 자동으로 지워집니다. 전자 파일은 복구할 수 없는 방법으로 삭제합니다.</p>
+    <h3>2. 처리 목적</h3>
+    <ul>
+      <li>게임 제공: 계정 생성, 진행 저장, 다른 기기에서 이어하기(로그인 연결), 계정 충돌 시 어느 기록을 남길지 고르기</li>
+      <li>결제: 영수증 확인, 우편함 지급, 중복 지급 방지, 월 결제 한도 적용, 청약철회·환불 처리와 환불된 상품 회수</li>
+      <li>광고: 보상형 광고 제공, 시청 확인 후 보상 지급, 하루 시청 횟수 제한, 광고 성과 측정. 맞춤형 광고는 동의한 경우에만</li>
+      <li>공정한 운영: 변조·오류 악용·결제 사기 방지, 이용 제한, 확률형 상품 결과 기록 보관</li>
+      <li>고객 지원, 공지, 장애 원인 확인, 접속자 수 등 통계(개인을 알아볼 수 없는 형태)</li>
+    </ul>
 
-    <h3>3. 처리 위탁과 국외 이전</h3>
+    <h3>3. 보유 기간과 파기</h3>
     <table>
-      <tr><td>네이버클라우드 (대한민국)</td><td>게임 서버·데이터베이스 운영</td></tr>
-      <tr><td>Google LLC (미국 등)</td><td>광고(AdMob), 이용 통계·오류 분석(Firebase), 구글플레이 결제 — 앱 사용 시 네트워크로 전송, 위탁 업체의 보관 기간 정책에 따름</td></tr>
-      <tr><td>Apple Inc. (미국 등)</td><td>App Store 결제</td></tr>
+      <tr><td>게임 계정·저장·로그인 연결·세션</td><td>계정 삭제 시 즉시 파기. 마지막 접속 후 3년 동안 접속이 없으면 파기</td></tr>
+      <tr><td>결제·청약철회·환불 기록, 재화 장부, 소환 기록</td><td>「전자상거래 등에서의 소비자보호에 관한 법률」에 따라 5년 보관 후 파기(계정을 삭제해도 플레이어 번호와 함께 이 기간 동안 남습니다). 소비자 불만·분쟁 처리 기록은 3년</td></tr>
+      <tr><td>요청 처리 기록</td><td>중복 요청 방지용 기록은 30일 뒤 자동 삭제</td></tr>
+      <tr><td>서버 로그(IP 주소 등)</td><td>최대 60일 뒤 자동 삭제</td></tr>
+      <tr><td>분 단위 접속자 수</td><td>30일 뒤 자동 삭제 (개인을 알아볼 수 없는 숫자)</td></tr>
+      <tr><td>서버 백업</td><td>암호화해 보관하며 약 5주 안에 순서대로 지워집니다. 삭제한 계정도 이 기간 동안 백업본에 남을 수 있으나 복원해 쓰지 않습니다</td></tr>
+      <tr><td>문의 기록</td><td>처리 완료 후 3년 (분쟁 대응) 뒤 파기</td></tr>
     </table>
-    <p>회사는 개인정보를 판매하지 않으며, 법령에 따른 경우를 빼고 제3자에게 제공하지 않습니다.</p>
+    <p>전자 파일은 복구할 수 없는 방법으로 지우고, 종이 문서는 만들지 않습니다.</p>
 
-    <h3>4. 이용자의 권리</h3>
-    <p>이용자는 언제든지 자신의 정보 열람·정정·삭제·처리 정지를 요청할 수 있습니다. 게임 설정의 <strong>계정 삭제</strong> 또는 아래 이메일로 요청하면 지체 없이 처리합니다. 맞춤 광고 동의는 기기 설정(iOS: 추적 허용, 안드로이드: 광고 ID)과 게임 안 동의 화면에서 언제든 바꿀 수 있습니다.</p>
+    <h3>4. 제3자 제공</h3>
+    <p>회사는 이용자의 개인정보를 판매하지 않으며, 제3자에게 제공하지 않습니다. 법령에 근거한 수사기관 요청 등 법이 허용하는 경우만 예외입니다.</p>
 
-    <h3>5. 아동</h3>
-    <p>게임은 만 14세 미만 아동을 주된 대상으로 하지 않습니다. 만 14세 미만 아동의 정보가 수집된 사실을 알게 되면 지체 없이 삭제합니다.</p>
+    <h3>5. 처리 위탁</h3>
+    <table>
+      <tr><td>NAVER Cloud (네이버클라우드㈜, 대한민국)</td><td>게임 서버·데이터베이스·백업 운영 (서버는 국내에 있습니다). 위탁 계약 종료 또는 계정 삭제 시까지</td></tr>
+    </table>
 
-    <h3>6. 안전성 확보 조치</h3>
-    <p>전송 구간 암호화(HTTPS), 데이터베이스 접근 권한 제한, 접속 기록 보관, 정기 백업을 시행합니다.</p>
+    <h3>6. 국외 이전</h3>
+    <p>게임 기능을 위해 아래와 같이 개인정보가 국외로 전송됩니다. 「개인정보 보호법」 제28조의8에 따라 알립니다.</p>
+    <table>
+      <tr><td>받는 자</td><td><strong>Google LLC</strong> (Google AdMob, Google Play, Google 로그인) · 미국 등 Google의 데이터센터 소재 국가 · 연락처 <a href="https://support.google.com/policies/contact/general_privacy_form">Google 개인정보 문의</a></td></tr>
+      <tr><td>이전 항목</td><td>광고: 광고 식별자(허용 시), IP 주소, 기기·OS 정보, 광고 상호작용, 보상 확인용 플레이어 번호 · 결제: Google Play 구매 토큰, 상품 · 로그인: Google 로그인 토큰 확인 요청</td></tr>
+      <tr><td>목적·시기·방법</td><td>광고 제공·측정·보상 확인, 결제 확인·환불 알림, 로그인 확인 — 해당 기능을 쓸 때 암호화된 네트워크로 전송</td></tr>
+      <tr><td>보유 기간</td><td>Google 개인정보처리방침에 따름 (<a href="https://policies.google.com/privacy">policies.google.com/privacy</a>)</td></tr>
+    </table>
+    <table>
+      <tr><td>받는 자</td><td><strong>Apple Inc.</strong> (App Store 결제, Apple로 로그인) · 미국 등 · 연락처 <a href="https://www.apple.com/kr/legal/privacy/contact/">Apple 개인정보 문의</a></td></tr>
+      <tr><td>이전 항목</td><td>결제: App Store 거래 번호, 상품 · 로그인: Apple 로그인 토큰 확인 요청</td></tr>
+      <tr><td>목적·시기·방법</td><td>결제 확인·환불 알림, 로그인 확인 — 해당 기능을 쓸 때 암호화된 네트워크로 전송</td></tr>
+      <tr><td>보유 기간</td><td>Apple 개인정보처리방침에 따름 (<a href="https://www.apple.com/kr/legal/privacy/">apple.com/kr/legal/privacy</a>)</td></tr>
+    </table>
+    <p><strong>거부 방법과 효과:</strong> 로그인 연결을 하지 않거나 광고를 보지 않으면 해당 이전은 일어나지 않으며, 게임은 손님 계정으로 그대로 할 수 있습니다(다른 기기에서 이어하기와 광고 보상만 쓸 수 없습니다). 앱 결제는 스토어를 통해서만 할 수 있어 결제를 하려면 해당 이전이 필요합니다. 맞춤형 광고는 아래 7절의 방법으로 끌 수 있습니다.</p>
 
-    <h3>7. 개인정보 보호책임자</h3>
-    <p>내고웍스 대표 신동현 · <a href="mailto:contact@naegoworks.com">contact@naegoworks.com</a><br>
-    개인정보 침해 신고·상담: 개인정보침해신고센터(국번 없이 118), 개인정보분쟁조정위원회(1833-6972)</p>
+    <h3>7. 광고 식별자, 앱 추적 투명성(ATT)과 맞춤형 광고</h3>
+    <ul>
+      <li>게임의 광고는 이용자가 직접 눌러서 보는 <strong>보상형 광고</strong>뿐이며, 보지 않아도 게임을 할 수 있습니다.</li>
+      <li><strong>iOS:</strong> 광고 식별자(IDFA)는 앱 추적 투명성(ATT) 창에서 「추적 허용」을 고른 경우에만 쓰입니다. 허용하지 않으면 IDFA 없이 비맞춤형 광고가 나옵니다. <em>설정 → 개인정보 보호 및 보안 → 추적</em>에서 언제든 바꿀 수 있습니다.</li>
+      <li><strong>Android:</strong> <em>설정 → 개인정보 보호 → 광고</em>(기기마다 다름)에서 광고 ID를 재설정하거나 삭제할 수 있습니다. 삭제하면 맞춤형 광고에 쓰이지 않습니다.</li>
+      <li><strong>유럽경제지역(EEA)·영국·스위스 이용자:</strong> 처음 광고를 불러오기 전에 Google의 동의 관리 플랫폼(UMP) 동의 창을 보여 주며, 동의하지 않으면 비맞춤형(제한된) 광고만 나옵니다. 동의는 게임 안 동의 설정에서 바꿀 수 있습니다.</li>
+      <li>회사는 광고 식별자를 서버에 저장하지 않습니다. 광고 데이터 처리는 Google의 <a href="https://policies.google.com/technologies/ads">광고 정책</a>을 따릅니다.</li>
+    </ul>
 
-    <h3>8. 방침의 변경</h3>
-    <p>이 방침이 바뀌면 시행 7일 전부터 이 페이지와 게임 공지로 알립니다. 시행일: 2026년 11월 5일</p>
+    <h3>8. 계정과 데이터 삭제</h3>
+    <ul>
+      <li><strong>게임 안에서 (Apple·Google 로그인한 계정):</strong> <em>설정 → 계정 → 계정 삭제 → 계정 지우기</em>. 서버의 계정, 게임 상태·저장, 도감, 던전·주간 보스 기록, 의심 기록, 광고 확인 기록, 로그인 연결, 이전 코드, 세션이 즉시 지워지고 기기는 처음부터 시작합니다.</li>
+      <li><strong>이메일로 (손님 계정이거나 앱을 지운 경우):</strong> <em>설정 → 고객센터</em>의 사용자 번호를 적어 <a href="mailto:contact@naegoworks.com">contact@naegoworks.com</a> 으로 보내 주세요. 본인 확인 뒤 10일 안에 지우고 알려 드립니다. 자세한 방법은 <a href="./delete.html">계정 삭제 안내</a>에 있습니다.</li>
+      <li>3절의 법정 보관 기록(결제·환불·장부·소환)은 보관 기간이 끝난 뒤 파기합니다. 이 기록은 법령상 의무와 분쟁 대응에만 씁니다.</li>
+      <li>Apple·Google 쪽 로그인 연결은 <em>iPhone 설정 → Apple 계정 → 로그인 및 보안 → Apple로 로그인</em>, <a href="https://myaccount.google.com/connections">Google 계정 → 서드 파티 연결</a>에서도 끊을 수 있습니다.</li>
+    </ul>
+
+    <h3>9. 이용자와 법정대리인의 권리</h3>
+    <p>이용자(만 14세 미만이면 법정대리인)는 언제든지 자신의 개인정보 열람, 정정, 삭제, 처리 정지, 동의 철회를 요청할 수 있습니다. 위 이메일로 사용자 번호와 함께 요청하면 10일 안에 처리하고 결과를 알려 드립니다. 대리인을 통해서도 요청할 수 있으며, 이때 위임 사실을 확인할 수 있는 자료를 요청할 수 있습니다. 법령에 따라 보관해야 하는 정보는 삭제 요청이 제한될 수 있으며, 그 이유를 알려 드립니다. 유럽경제지역·영국 이용자는 GDPR에 따른 권리(이동권, 감독기관 민원 등)도 가집니다.</p>
+
+    <h3>10. 아동의 개인정보</h3>
+    <p>게임은 전체 이용가로 만들었지만 만 13세 미만 아동을 주된 대상으로 하지 않습니다. 게임은 이름·연락처처럼 법정대리인 동의가 필요한 정보를 받지 않도록 설계했습니다. 만 14세 미만 이용자는 보호자와 함께 이용하고, 결제나 광고 추적 허용 같은 선택은 보호자의 안내를 받아 주세요. 만 14세 미만 아동이 보낸 문의 등으로 동의가 필요한 정보를 받아야 할 때는 법정대리인의 동의를 확인하며, 동의 없이 수집된 사실을 알게 되면 지체 없이 삭제합니다.</p>
+
+    <h3>11. 안전성 확보 조치</h3>
+    <ul>
+      <li>모든 통신 구간 암호화(HTTPS/TLS)</li>
+      <li>세션 토큰·기기 이전 코드는 원문 없이 SHA-256 해시로만 저장, Apple·Google 로그인 토큰은 서명·발급 대상·일회용 값을 확인</li>
+      <li>운영 도구는 운영 키와 허용 IP로만 접근, 반복 실패 시 잠금, 모든 운영 조치를 감사 기록으로 보관</li>
+      <li>데이터베이스 접근 권한 최소화, 비밀 값 분리 보관, 백업 암호화, 요청 횟수 제한</li>
+    </ul>
+
+    <h3>12. 개인정보 보호책임자</h3>
+    <p>개인정보 보호책임자: 내고웍스 대표 신동현 · <a href="mailto:contact@naegoworks.com">contact@naegoworks.com</a><br>
+    개인정보 열람 청구도 같은 곳으로 접수합니다.</p>
+    <p class="muted">개인정보 침해 신고·상담: 개인정보침해신고센터 (privacy.kisa.or.kr, 국번 없이 118) · 개인정보분쟁조정위원회 (kopico.go.kr, 1833-6972) · 대검찰청 사이버수사과 (국번 없이 1301) · 경찰청 사이버수사국 (국번 없이 182)</p>
+
+    <h3>13. 방침의 변경</h3>
+    <p>이 방침을 바꾸면 시행 7일 전(이용자 권리에 중요한 변경은 30일 전)부터 이 페이지와 게임 안 공지로 알립니다.</p>
+    <p>시행일: 2026년 11월 18일</p>
+
+    <h3>이전 방침(2026년 11월 5일)과 달라진 점</h3>
+    <ul class="muted">
+      <li>Apple로 로그인·Google 로그인(선택)과 계정 고유 식별자 처리를 추가하고, 이메일·이름은 저장하지 않는다고 밝혔습니다.</li>
+      <li>서버가 저장하는 항목(장부, 소환 기록, 환불 기록, 광고 확인 기록, 제재 정보, 일별 접속)과 항목별 보관 기간(요청 기록 30일, 서버 로그 60일, 백업 약 5주)을 구체적으로 적었습니다.</li>
+      <li>국외 이전 표(Google·Apple)와 거부 방법, ATT·UMP·광고 식별자 안내를 새로 넣었고, 쓰지 않는 Firebase 항목은 뺐습니다.</li>
+      <li>실제 계정 삭제 경로(설정 → 계정 → 계정 삭제, 손님 계정은 이메일)와 삭제 후 남는 법정 보관 기록을 바로잡았습니다.</li>
+      <li>아동, 법정대리인 권리, 안전성 조치, 침해 신고 기관 안내를 보강했습니다. 이전 방침은 출시 전 버전에 쓰였습니다.</li>
+    </ul>
   </section>
+
   <section id="en" lang="en">
-    <h2>Privacy Policy</h2>
-    <p>This policy explains what information Chapchu Idle ("the game"), provided by Naego Works ("we"), processes and why.</p>
-
-    <h3>1. Information we process</h3>
-    <table>
-      <tr><td>Game account</td><td>A random guest account ID and game progress (stages, upgrades, bones, friends, login days) — to save progress, restore it on a new device, and prevent abuse</td></tr>
-      <tr><td>Purchases</td><td>Store receipts, transaction IDs and purchased items — to verify purchases, deliver items, prevent duplicate delivery and handle refunds. Card details are handled by Apple/Google; we never receive them</td></tr>
-      <tr><td>Advertising</td><td>Advertising identifier (IDFA / Advertising ID) and device/OS info — to show rewarded ads and measure them. Personalized ads are used only with your consent</td></tr>
-      <tr><td>Usage & diagnostics</td><td>Device model, OS and app version, usage events, crash logs, IP address — to improve the game, fix errors and keep it secure</td></tr>
-      <tr><td>Support</td><td>Your email and message, only if you contact us</td></tr>
-    </table>
-    <p class="muted">The game does not access your name, phone number, address, location, contacts, photos, camera or microphone.</p>
-
-    <h3>2. Retention</h3>
-    <p>Game account data is deleted when you request account deletion or three years after your last login. Purchase records are kept for five years as required by Korean consumer law. Server backups are deleted automatically within 14 days.</p>
-
-    <h3>3. Service providers and international transfer</h3>
-    <p>NAVER Cloud (Republic of Korea): game servers and database. Google LLC (USA and others): ads (AdMob), analytics and crash reports (Firebase), Google Play billing. Apple Inc. (USA and others): App Store billing. We do not sell your personal information.</p>
-
-    <h3>4. Your rights</h3>
-    <p>You can access, correct, delete or restrict your data at any time. Use <strong>Delete account</strong> in the game settings or email us. You can change ad personalization in your device settings (iOS: Allow Tracking; Android: Advertising ID) and in the in-game consent screen. Users in the EU/UK have the rights provided by the GDPR, including the right to complain to a supervisory authority.</p>
-
-    <h3>5. Children</h3>
-    <p>The game is not directed to children under 13 (under 14 in Korea). If we learn that we have collected such a child's data, we delete it promptly.</p>
-
-    <h3>6. Contact</h3>
-    <p>Naego Works · Privacy officer: Donghyeon Shin · <a href="mailto:contact@naegoworks.com">contact@naegoworks.com</a> · Effective November 5, 2026</p>
+    <h2>Privacy Policy (summary)</h2>
+    <p>This is an English summary of the Korean policy above. If they differ, the Korean version prevails. Effective November 18, 2026.</p>
+    <h3>What we process</h3>
+    <ul>
+      <li><strong>Game account:</strong> a random player ID, session data (tokens stored only as hashes), creation and last-seen times, a device value if the app sends one, and a nickname (default "Chapchu#number").</li>
+      <li><strong>Optional sign-in:</strong> if you use Sign in with Apple or Google sign-in, we store only the account identifier (sub) issued by Apple/Google. We do not store your email or name.</li>
+      <li><strong>Game records:</strong> save data, currency ledger, summon (loot box) results, mailbox, dungeon and weekly boss records, daily activity counts.</li>
+      <li><strong>Purchases:</strong> store transaction IDs, product, price, refund records and your monthly spending limit. Payment card details are handled by Apple/Google.</li>
+      <li><strong>Ads:</strong> rewarded ads are served by Google AdMob, which may process your advertising ID (only if permitted), IP address and device info. Our server stores only the AdMob reward verification ID.</li>
+      <li><strong>Server logs:</strong> IP address, request times and errors. No chat or user-generated content exists in the game.</li>
+    </ul>
+    <h3>Retention</h3>
+    <p>Account and game data are deleted when you delete your account, or after 3 years of inactivity. Purchase, refund, ledger and summon records are kept for 5 years as required by Korean consumer law. Request records are deleted after 30 days, server logs after 60 days, and encrypted backups rotate out within about 5 weeks.</p>
+    <h3>Service providers and international transfer</h3>
+    <p>NAVER Cloud (Korea) hosts our servers and database. Google LLC (AdMob, Google Play, Google sign-in) and Apple Inc. (App Store, Sign in with Apple) receive the data needed for ads, purchases and sign-in, in the USA and other countries. We do not sell or share your personal information with other third parties.</p>
+    <h3>Advertising choices</h3>
+    <p>On iOS, the IDFA is used only if you allow tracking in the App Tracking Transparency prompt (Settings → Privacy &amp; Security → Tracking). On Android, you can reset or delete your advertising ID in device settings. Users in the EEA, UK and Switzerland see Google's consent form (UMP) before ads load; without consent, only non-personalized ads are shown.</p>
+    <h3>Deleting your account</h3>
+    <p>If you signed in with Apple or Google, go to <strong>Settings → Account → Delete account</strong> in the game. Guests, or anyone who has uninstalled the app, can email us with the player number from <strong>Settings → Support</strong>; we delete within 10 days. See <a href="./delete.html">Delete account</a>.</p>
+    <h3>Your rights and children</h3>
+    <p>You can request access, correction, deletion or restriction of your data by email; EEA/UK users also have GDPR rights, including complaining to a supervisory authority. The game is not directed to children under 13 and does not ask for names or contact details. If we learn we collected data requiring parental consent without it, we delete it.</p>
+    <h3>Contact</h3>
+    <p>Naego Works · Privacy officer: Donghyeon Shin (Representative) · <a href="mailto:contact@naegoworks.com">contact@naegoworks.com</a></p>
   </section>
 
   <section id="support">
     <h2>지원 · Support</h2>
-    <p>게임 안 <strong>설정 → 문의하기</strong> 또는 이메일로 연락해 주세요. 계정 번호가 함께 있으면 더 빨리 도와드릴 수 있어요.<br>
-    Contact us via <strong>Settings → Contact</strong> in the game or by email. Including your account ID helps us respond faster.</p>
+    <p>게임 안 <strong>설정 → 고객센터</strong> 또는 이메일로 연락해 주세요. 고객센터 화면의 사용자 번호를 함께 보내 주시면 더 빨리 도와드릴 수 있어요.<br>
+    Contact us via <strong>Settings → Support</strong> in the game or by email. Including your player number helps us respond faster.</p>
     <p><a href="mailto:contact@naegoworks.com">contact@naegoworks.com</a></p>
   </section>
 
